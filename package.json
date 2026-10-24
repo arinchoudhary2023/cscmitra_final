@@ -1,0 +1,19 @@
+{
+  "name": "csc-digital-mitra-supabase",
+  "version": "4.0.0",
+  "private": true,
+  "description": "CSCDigitalMitra college demo using a shared Supabase PostgreSQL database",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "check": "node --check server.js"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.13.1"
+  }
+}

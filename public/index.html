@@ -1,0 +1,3966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>CSCDigitalMitra V3.2 | Digital Citizen Services</title>
+
+  <!-- Apply the saved theme before first paint to avoid a flash. -->
+  <script>
+    try { document.documentElement.dataset.theme = localStorage.getItem('cscdm_theme') || 'light'; } catch (e) {}
+  </script>
+
+  <link rel="icon" type="image/png" sizes="64x64" href="data:image/png;base64,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">
+  <link rel="apple-touch-icon" href="data:image/png;base64,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">
+
+  <style>
+  /* ===== Base styles, layout and components ===== */
+  :root {
+    --bg: #f6f7fb;
+    --card: #fff;
+    --tx: #1c2333;
+    --mut: #667085;
+    --pri: #1674e8;
+    --bd: #e2e5ee;
+    --ok: #2b8a3e;
+    --bad: #c92a2a;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #12151c;
+    --card: #1b2030;
+    --tx: #e8eaf2;
+    --mut: #9aa3b8;
+    --bd: #2c3347;
+    --pri: #5da0ff;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-padding-top: env(safe-area-inset-top, 0px);
+  }
+  body {
+    margin: 0;
+    font: 15px/1.45 system-ui, 'Noto Sans Devanagari', sans-serif;
+    background: var(--bg);
+    color: var(--tx);
+  }
+  header {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    background: var(--card);
+    border-bottom: 1px solid var(--bd);
+    flex-wrap: wrap;
+  }
+  nav {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding: 8px 14px;
+    background: var(--card);
+    border-bottom: 1px solid var(--bd);
+  }
+  nav button {
+    white-space: nowrap;
+    background: none;
+    color: var(--tx);
+    border: 1px solid var(--bd);
+  }
+  nav .on {
+    background: var(--pri);
+    color: #fff;
+    border-color: var(--pri);
+  }
+  main,
+  .auth {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 14px;
+  }
+  button {
+    background: var(--pri);
+    color: #fff;
+    border: 0;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font: inherit;
+    cursor: pointer;
+  }
+  button.g {
+    background: none;
+    color: var(--tx);
+    border: 1px solid var(--bd);
+  }
+  button.d {
+    background: var(--bad);
+  }
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--bd);
+    border-radius: 8px;
+    background: var(--card);
+    color: var(--tx);
+    font: inherit;
+  }
+  label {
+    display: block;
+    margin: 8px 0;
+    font-size: 13px;
+    color: var(--mut);
+  }
+  label.c {
+    display: inline-block;
+    margin: 3px 8px 3px 0;
+  }
+  label.c input {
+    width: auto;
+  }
+  .card,
+  .st {
+    background: var(--card);
+    border: 1px solid var(--bd);
+    border-radius: 10px;
+    padding: 12px;
+    margin: 8px 0;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 8px;
+  }
+  .st {
+    margin: 0;
+  }
+  .st b {
+    display: block;
+    font-size: 20px;
+  }
+  .m {
+    color: var(--mut);
+    font-size: 13px;
+  }
+  .row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+  .b {
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 99px;
+    background: var(--bd);
+  }
+  .chip {
+    background: none;
+    color: var(--mut);
+    border: 1px solid var(--bd);
+    margin: 2px;
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+  .chip.on {
+    background: var(--ok);
+    color: #fff;
+    border-color: var(--ok);
+  }
+  .warn {
+    background: #fff3bf;
+    color: #5c4400;
+    padding: 8px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+  }
+  .toast {
+    position: fixed;
+    left: 50%;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    transform: translate(-50%, 20px);
+    background: var(--ok);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    opacity: 0;
+    transition: .25s;
+    pointer-events: none;
+    z-index: 9;
+    max-width: 90%;
+  }
+  .toast.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  .toast.bad {
+    background: var(--bad);
+  }
+  header.top {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 5;
+  }
+  .brand {
+    font-weight: 700;
+    color: var(--tx);
+    text-decoration: none;
+  }
+  .side {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .links {
+    display: flex;
+    gap: 14px;
+  }
+  .links a {
+    color: var(--tx);
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .links a:hover {
+    color: var(--pri);
+  }
+  .side select,
+  header select {
+    width: auto;
+  }
+  .burger {
+    display: none;
+  }
+  .wrap {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 56px 16px;
+  }
+  .hero {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 32px;
+    align-items: center;
+  }
+  .hero h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.15;
+    margin: 8px 0;
+  }
+  .eyebrow {
+    color: var(--pri);
+    font-weight: 600;
+    margin: 0;
+  }
+  .lead {
+    color: var(--mut);
+    font-size: 17px;
+  }
+  .wrap h2 {
+    font-size: 28px;
+    margin: 0 0 10px;
+  }
+  .alt {
+    background: var(--card);
+    border-block: 1px solid var(--bd);
+  }
+  .cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+  }
+  .cols .card {
+    margin: 0;
+  }
+  .step {
+    border-left: 3px solid var(--pri);
+    padding: 4px 12px;
+  }
+  footer {
+    padding: 28px 16px;
+    border-top: 1px solid var(--bd);
+    background: var(--card);
+  }
+  footer .in {
+    max-width: 1040px;
+    margin: auto;
+  }
+  @media(max-width:760px) {
+    .hero {
+      grid-template-columns: 1fr;
+    }
+    .burger {
+      display: block;
+    }
+    .side {
+      display: none;
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .side.open {
+      display: flex;
+    }
+    .links {
+      flex-direction: column;
+    }
+    .wrap {
+      padding: 36px 16px;
+    }
+  }
+  :root {
+    --soft: #edf4ff;
+    --sh: 0 4px 14px rgba(0, 0, 0, .06);
+    --t: .18s cubic-bezier(.2, .7, .2, 1);
+  }
+  :root[data-theme="dark"] {
+    --soft: #33261f;
+    --sh: 0 4px 14px rgba(0, 0, 0, .4);
+  }
+  button,
+  input:not([type=checkbox]),
+  select {
+    min-height: 40px;
+  }
+  button {
+    transition: transform var(--t), opacity var(--t), background var(--t);
+  }
+  button:active {
+    transform: scale(.98);
+  }
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid var(--pri);
+    outline-offset: 2px;
+  }
+  ::placeholder {
+    color: var(--mut);
+    opacity: .8;
+  }
+  @keyframes in {
+    from { opacity: 0; transform: translateY(4px); }
+  }
+  .pg {
+    animation: in .2s;
+  }
+  .sg {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+    margin: 12px 0;
+  }
+  .sc {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    background: var(--card);
+    border: 1px solid var(--bd);
+    border-radius: 10px;
+    transition: border-color var(--t), box-shadow var(--t);
+  }
+  .sc:hover {
+    border-color: var(--pri);
+    box-shadow: var(--sh);
+  }
+  .ic,
+  .ic2 {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    background: var(--soft);
+    color: var(--pri);
+    flex: none;
+  }
+  .ic2 {
+    width: 30px;
+    height: 30px;
+  }
+  .sc .cat {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--mut);
+  }
+  .sc h3 {
+    margin: 2px 0 4px;
+    font-size: 16px;
+  }
+  .sc p {
+    margin: 0;
+    color: var(--mut);
+    font-size: 13px;
+    overflow-wrap: anywhere;
+  }
+  .sb2 {
+    flex: 1;
+  }
+  .sc button {
+    align-self: flex-start;
+  }
+  .fg {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0 12px;
+  }
+  .sr {
+    margin: 8px 0;
+  }
+  .app {
+    display: flex;
+    min-height: 100vh;
+  }
+  .sb {
+    width: 270px;
+    max-width: 88vw;
+    flex: none;
+    background: var(--card);
+    border-right: 1px solid var(--bd);
+    padding: 18px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    position: fixed;
+    inset: 0 auto 0 0;
+    height: 100dvh;
+    overflow: auto;
+    z-index: 40;
+    transform: translateX(-105%);
+    transition: transform .28s cubic-bezier(.2, .7, .2, 1);
+    box-shadow: var(--sh);
+  }
+  .sb.open {
+    transform: translateX(0);
+  }
+  .sbh {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .x,
+  .burger2 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .burger2 {
+    font-size: 21px;
+    padding: 7px 12px;
+  }
+  .ni {
+    background: none;
+    color: var(--tx);
+    text-align: left;
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+  .ni:hover {
+    background: var(--soft);
+  }
+  .ni.on {
+    background: var(--soft);
+    color: var(--pri);
+    font-weight: 600;
+  }
+  .mn {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+  }
+  .pg {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 18px 16px;
+  }
+  .ov {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 18, 42, .44);
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .28s;
+    z-index: 35;
+  }
+  .ov.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  @media(max-width:860px) {
+    .x,
+    .burger2 {
+      display: inline-flex;
+    }
+    .sb {
+      width: min(300px, 88vw);
+    }
+  }
+  @media(max-width:480px) {
+    .sg {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media(prefers-reduced-motion:reduce) {
+    *,
+    *::before,
+    *::after {
+      animation: none !important;
+      transition: none !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  :root {
+    --lk: #1b64d6;
+  }
+  :root[data-theme="dark"] {
+    --lk: #7ab2ff;
+  }
+  .pw {
+    position: relative;
+  }
+  .pw input {
+    padding-right: 64px;
+  }
+  .pw button {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    min-height: 32px;
+    padding: 4px 10px;
+  }
+  summary {
+    cursor: pointer;
+    font-size: 13px;
+  }
+  h3 {
+    font-size: 15px;
+    margin: 18px 0 6px;
+  }
+
+  /* ===== Premium redesign layer ===== */
+  :root {
+    --bg: #fff;
+    --card: #fff;
+    --tx: #151f4f;
+    --mut: #66718b;
+    --pri: #1674e8;
+    --bd: #e6ebf4;
+    --ok: #169b70;
+    --bad: #d6455d;
+    --soft: #edf4ff;
+    --sh: 0 10px 30px rgba(23, 44, 90, .07);
+    --t: .2s cubic-bezier(.2, .7, .2, 1);
+    --surface: #f6f8ff;
+    --navy: #111b50;
+    --blue2: #4d9cf5;
+  }
+  :root[data-theme="dark"] {
+    --bg: #101522;
+    --card: #171f31;
+    --tx: #edf2ff;
+    --mut: #a3aec6;
+    --pri: #68a8ff;
+    --bd: #2c3850;
+    --ok: #53c59b;
+    --bad: #ff7186;
+    --soft: #202e49;
+    --sh: 0 12px 30px rgba(0, 0, 0, .24);
+    --surface: #131b2b;
+    --navy: #0d153d;
+    --blue2: #8bc3ff;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 86px;
+  }
+  body {
+    font: 14px/1.65 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    letter-spacing: -.01em;
+    background: var(--bg);
+    color: var(--tx);
+  }
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+  button {
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-weight: 600;
+    letter-spacing: -.01em;
+  }
+  button:hover {
+    filter: brightness(1.02);
+    transform: translateY(-1px);
+  }
+  button:active {
+    transform: translateY(0) scale(.99);
+  }
+  button.g {
+    background: var(--card);
+    border: 1px solid var(--bd);
+    color: var(--tx);
+  }
+  input,
+  select,
+  textarea {
+    padding: 11px 12px;
+    border-radius: 10px;
+    border-color: var(--bd);
+    min-height: 44px;
+    transition: border-color var(--t), box-shadow var(--t);
+  }
+  input:focus,
+  select:focus,
+  textarea:focus {
+    border-color: var(--pri);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--pri) 13%, transparent);
+    outline: 0;
+  }
+  label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--mut);
+    margin: 12px 0;
+  }
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -.04em;
+    color: var(--tx);
+    line-height: 1.18;
+  }
+  h2 {
+    font-size: clamp(24px, 3vw, 34px);
+  }
+  p {
+    margin-top: 8px;
+  }
+  .m {
+    color: var(--mut);
+  }
+  .card,
+  .st {
+    border-radius: 14px;
+    border-color: var(--bd);
+    box-shadow: 0 4px 16px rgba(24, 43, 82, .035);
+    padding: 18px;
+  }
+  .st {
+    padding: 18px;
+  }
+  .st b {
+    font-size: 26px;
+    letter-spacing: -.04em;
+    color: var(--tx);
+    margin-top: 6px;
+  }
+  .grid {
+    gap: 12px;
+  }
+  .row {
+    gap: 8px;
+    align-items: center;
+  }
+  .b {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 9px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 650;
+    background: var(--soft);
+    color: var(--pri);
+  }
+  header.top {
+    padding: 13px max(20px, calc((100vw - 1120px)/2));
+    min-height: 68px;
+    background: color-mix(in srgb, var(--card) 94%, transparent);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--bd);
+    gap: 18px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    letter-spacing: -.03em;
+  }
+  .brand:before {
+    content: "";
+    display: block;
+    width: 28px;
+    height: 28px;
+    border-radius: 9px;
+    background: linear-gradient(135deg, #1674e8, #62b5ff);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .35);
+  }
+  .side {
+    gap: 14px;
+  }
+  .links {
+    gap: 22px;
+    align-items: center;
+  }
+  .links a {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--mut);
+    transition: color var(--t);
+  }
+  .links a:hover {
+    color: var(--pri);
+  }
+  header select {
+    min-height: 36px;
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+  .wrap {
+    max-width: 1120px;
+    padding: 70px 24px;
+  }
+  .hero {
+    max-width: none;
+    padding: 70px max(24px, calc((100vw - 1120px)/2));
+    grid-template-columns: 1.08fr .92fr;
+    gap: 56px;
+    min-height: 430px;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(ellipse at 85% 28%, color-mix(in srgb, var(--pri) 10%, transparent), transparent 38%), linear-gradient(115deg, var(--card), var(--surface));
+  }
+  .hero:after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--bd), transparent);
+  }
+  .hero h1 {
+    font-size: clamp(38px, 5.4vw, 62px);
+    line-height: 1.04;
+    max-width: 600px;
+    margin: 14px 0 18px;
+    font-weight: 800;
+  }
+  .hero h1 span,
+  .hero h1 em {
+    color: var(--pri);
+    font-style: normal;
+  }
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: .17em;
+    text-transform: uppercase;
+    font-weight: 750;
+    color: var(--pri);
+  }
+  .lead {
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 560px;
+    color: var(--mut);
+  }
+  .hero .row {
+    margin-top: 24px;
+  }
+  .wrap h2 {
+    margin-bottom: 12px;
+  }
+  .alt {
+    background: var(--surface);
+    border-color: transparent;
+  }
+  .cols {
+    gap: 14px;
+  }
+  .cols .card {
+    margin: 0;
+  }
+  #about .cols {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  #about .cols .card {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 18px 18px 18px 48px;
+    position: relative;
+  }
+  #about .cols .card:before {
+    content: "✓";
+    position: absolute;
+    left: 16px;
+    top: 17px;
+    display: grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 7px;
+    background: var(--soft);
+    color: var(--pri);
+  }
+  .sg {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    margin: 24px 0 12px;
+  }
+  .sc {
+    align-items: center;
+    text-align: center;
+    justify-content: flex-start;
+    min-height: 145px;
+    padding: 20px 12px 16px;
+    border-radius: 14px;
+    border-color: var(--bd);
+    box-shadow: 0 5px 16px rgba(26, 47, 90, .045);
+    gap: 10px;
+  }
+  .sc:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--sh);
+    border-color: color-mix(in srgb, var(--pri) 45%, var(--bd));
+  }
+  .ic {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    color: var(--pri);
+    background: var(--soft);
+  }
+  .sc .cat {
+    font-size: 9px;
+    letter-spacing: .08em;
+  }
+  .sc h3 {
+    font-size: 13px;
+    margin: 6px 0 0;
+    line-height: 1.4;
+  }
+  .sc p {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+  .sc button {
+    margin-top: auto;
+    align-self: center;
+    font-size: 11px;
+    padding: 7px 12px;
+    min-height: 32px;
+  }
+  .sc>.b {
+    align-self: center;
+  }
+  .check-option {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .check-option input {
+    width: auto;
+    min-height: 0;
+    margin-top: 4px;
+  }
+  .step {
+    border-left-color: var(--pri);
+    padding: 14px 18px;
+    background: var(--card);
+    border: 1px solid var(--bd);
+    border-left: 3px solid var(--pri);
+    border-radius: 12px;
+  }
+  #plans.wrap {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    text-align: center;
+  }
+  .plans-band {
+    background: var(--surface);
+  }
+  .plans-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 900px;
+    margin: 28px auto 0;
+    text-align: left;
+  }
+  .plan-card {
+    background: var(--card);
+    border: 1px solid var(--bd);
+    border-radius: 16px;
+    padding: 22px;
+    box-shadow: 0 7px 22px rgba(25, 48, 96, .04);
+  }
+  .plan-card.featured {
+    border-color: var(--pri);
+    box-shadow: 0 12px 30px rgba(22, 116, 232, .12);
+    position: relative;
+  }
+  .plan-no {
+    font-size: 10px;
+    color: var(--mut);
+    letter-spacing: .1em;
+  }
+  .plan-card h3 {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+  .plan-card ul {
+    list-style: none;
+    margin: 18px 0;
+    padding: 0;
+  }
+  .plan-card li {
+    font-size: 12px;
+    color: var(--mut);
+    padding: 8px 0;
+    border-bottom: 1px solid var(--bd);
+  }
+  .plan-card button {
+    width: 100%;
+    margin-top: 8px;
+  }
+  #news .cols {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  #news .card {
+    padding: 22px;
+    min-height: 130px;
+  }
+  #contact .card {
+    max-width: 620px;
+  }
+  footer {
+    background: #101a4b;
+    color: #fff;
+    border: 0;
+    padding: 42px 24px;
+  }
+  footer b {
+    color: #fff;
+  }
+  footer .in>b {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  footer .in>b:before {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 25px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #1674e8, #62b5ff);
+  }
+  footer .m {
+    color: #c0c9e5;
+  }
+  footer .b {
+    margin: 3px;
+  }
+  footer .g {
+    color: #fff;
+    background: rgba(255, 255, 255, .08);
+    border-color: rgba(255, 255, 255, .16);
+  }
+  .app {
+    background: var(--surface);
+  }
+  .sb {
+    width: 248px;
+    padding: 18px 14px;
+    background: var(--card);
+    border-right: 1px solid var(--bd);
+    box-shadow: 4px 0 24px rgba(26, 47, 90, .025);
+  }
+  .sbh {
+    padding: 5px 7px 16px;
+    border-bottom: 1px solid var(--bd);
+    margin-bottom: 10px;
+  }
+  .sbh b {
+    font-size: 14px;
+    letter-spacing: -.03em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .sbh b:before {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 25px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #1674e8, #62b5ff);
+  }
+  .ni {
+    width: 100%;
+    min-height: 42px;
+    border-radius: 9px;
+    padding: 10px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--mut);
+    transition: background var(--t), color var(--t);
+  }
+  .ni.on {
+    background: var(--soft);
+    color: var(--pri);
+    box-shadow: inset 3px 0 0 var(--pri);
+  }
+  .mn>header {
+    position: sticky;
+    top: 0;
+    z-index: 8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 22px;
+    background: color-mix(in srgb, var(--card) 94%, transparent);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--bd);
+  }
+  .mn>header .m {
+    font-weight: 600;
+    font-size: 12px;
+  }
+  .pg {
+    max-width: 1120px;
+    padding: 28px 26px 50px;
+    min-height: calc(100vh - 70px);
+  }
+  .pg>h2 {
+    font-size: 28px;
+    margin: 4px 0 8px;
+  }
+  .page-subtitle {
+    color: var(--mut);
+    margin: 0 0 22px;
+  }
+  .pg>.grid {
+    margin: 22px 0;
+  }
+  .pg .card {
+    margin: 12px 0;
+  }
+  .pg .card h3 {
+    margin-top: 0;
+  }
+  .pg .row button {
+    min-height: 38px;
+  }
+  .pg .row button.d {
+    background: var(--bad);
+    color: white;
+  }
+  .profile-card {
+    max-width: 720px;
+  }
+  .section-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .section-heading .ic2 {
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+    background: var(--soft);
+    color: var(--pri);
+  }
+  .section-heading b {
+    font-size: 15px;
+  }
+  .section-heading p {
+    margin: 2px 0 0;
+  }
+  .auth-page {
+    min-height: calc(100vh - 68px);
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    background: var(--surface);
+  }
+  .auth-main {
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+  }
+  .auth-card {
+    width: min(100%, 440px);
+    background: var(--card);
+    border: 1px solid var(--bd);
+    border-radius: 20px;
+    padding: clamp(22px, 4vw, 38px);
+    box-shadow: 0 18px 55px rgba(25, 45, 90, .08);
+  }
+  .auth-mark {
+    display: flex;
+    gap: 11px;
+    align-items: center;
+    margin-bottom: 28px;
+  }
+  .brand-symbol {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #1674e8, #5eb4ff);
+    display: grid;
+    place-items: center;
+    color: white;
+    font-size: 11px;
+    font-weight: 800;
+    box-shadow: 0 6px 14px rgba(22, 116, 232, .22);
+  }
+  .auth-mark b {
+    display: block;
+    font-size: 14px;
+  }
+  .auth-mark small {
+    display: block;
+    color: var(--mut);
+    font-size: 10px;
+    margin-top: 1px;
+  }
+  .auth-card .eyebrow {
+    margin: 0;
+  }
+  .auth-card h1 {
+    font-size: 29px;
+    margin: 8px 0;
+  }
+  .auth-intro {
+    color: var(--mut);
+    font-size: 13px;
+    line-height: 1.7;
+    margin: 0 0 22px;
+  }
+  .auth-form label {
+    display: block;
+    margin: 13px 0;
+    color: var(--tx);
+    font-size: 12px;
+  }
+  .auth-form label>input,
+  .auth-form label textarea {
+    margin-top: 6px;
+  }
+  .auth-form .pw {
+    margin-top: 6px;
+  }
+  .pw {
+    position: relative;
+  }
+  .pw input {
+    padding-right: 50px;
+    width: 100%;
+  }
+  .pw .eye {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    min-width: 36px;
+    width: 36px;
+    height: 36px;
+    min-height: 36px;
+    padding: 7px;
+    display: grid;
+    place-items: center;
+    border: 0;
+    background: transparent;
+    color: var(--mut);
+  }
+  .pw .eye:hover {
+    background: var(--soft);
+    color: var(--pri);
+    transform: none;
+  }
+  .auth-submit {
+    width: 100%;
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 16px;
+    min-height: 48px;
+    border-radius: 10px;
+    background: var(--pri);
+    box-shadow: 0 7px 16px color-mix(in srgb, var(--pri) 20%, transparent);
+  }
+  .auth-switch {
+    text-align: center;
+    font-size: 12px;
+    color: var(--mut);
+    margin: 20px 0 0;
+  }
+  .check-option {
+    display: flex !important;
+    align-items: center;
+    gap: 7px;
+    border: 1px solid var(--bd);
+    padding: 9px;
+    border-radius: 9px;
+    margin: 0 !important;
+    font-weight: 500 !important;
+  }
+  .check-option input {
+    width: auto;
+    min-height: 0;
+  }
+  .transaction-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+  .transaction-row p {
+    margin: 5px 0;
+  }
+  .toast {
+    border-radius: 12px;
+    box-shadow: var(--sh);
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .sc {
+    border-top: 2px solid var(--service-accent, var(--pri));
+  }
+  .sc:nth-child(8n+1) {
+    --service-accent: #e45e72;
+  }
+  .sc:nth-child(8n+2) {
+    --service-accent: #f0ad42;
+  }
+  .sc:nth-child(8n+3) {
+    --service-accent: #7b7ef5;
+  }
+  .sc:nth-child(8n+4) {
+    --service-accent: #27a8b7;
+  }
+  .sc:nth-child(8n+5) {
+    --service-accent: #4388ed;
+  }
+  .sc:nth-child(8n+6) {
+    --service-accent: #28a878;
+  }
+  .sc:nth-child(8n+7) {
+    --service-accent: #df6fa0;
+  }
+  .sc:nth-child(8n) {
+    --service-accent: #8492a6;
+  }
+  .sc .ic {
+    color: var(--service-accent, var(--pri));
+    background: color-mix(in srgb, var(--service-accent, var(--pri)) 10%, white);
+  }
+  :root[data-theme="dark"] .sc .ic {
+    background: color-mix(in srgb, var(--service-accent, var(--pri)) 18%, var(--card));
+  }
+  #news .news-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+  }
+  #news .news-card {
+    padding: 0;
+    overflow: hidden;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .news-art {
+    height: 150px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #e8f2ff, #f7faff);
+  }
+  .news-art-1 {
+    background: linear-gradient(135deg, #fff4e7, #fffaf2);
+  }
+  .news-art-2 {
+    background: linear-gradient(135deg, #e9fbf5, #f6fffc);
+  }
+  :root[data-theme="dark"] .news-art {
+    background: linear-gradient(135deg, #1b2c48, #20283b);
+  }
+  :root[data-theme="dark"] .news-art-1 {
+    background: linear-gradient(135deg, #3a2c23, #282233);
+  }
+  :root[data-theme="dark"] .news-art-2 {
+    background: linear-gradient(135deg, #183a35, #1b2937);
+  }
+  .news-chip {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    z-index: 2;
+    background: rgba(255, 255, 255, .86);
+    color: #25375e;
+    border-radius: 999px;
+    padding: 5px 9px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .02em;
+  }
+  .news-copy {
+    padding: 17px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    flex: 1;
+  }
+  .news-copy b {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+  .news-copy .m {
+    font-size: 11px;
+    line-height: 1.55;
+  }
+  @media(max-width:1000px) {
+    .sg {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .links {
+      gap: 13px;
+    }
+    .hero {
+      gap: 30px;
+    }
+  }
+  @media(max-width:760px) {
+    header.top {
+      padding: 10px 16px;
+      min-height: 60px;
+    }
+    .side {
+      display: flex;
+      position: fixed;
+      inset: 0 auto 0 0;
+      width: min(320px, 88vw);
+      height: 100dvh;
+      padding: 26px 22px;
+      background: var(--card);
+      flex-direction: column;
+      align-items: stretch;
+      gap: 20px;
+      z-index: 50;
+      box-shadow: 0 0 0 100vmax rgba(10, 18, 42, .44), var(--sh);
+      transform: translateX(-105%);
+      visibility: hidden;
+      transition: transform .28s cubic-bezier(.2, .7, .2, 1), visibility .28s;
+    }
+    .side.open {
+      display: flex;
+      visibility: visible;
+      transform: translateX(0);
+    }
+    .burger {
+      display: block;
+      position: relative;
+      z-index: 60;
+    }
+    .links {
+      gap: 16px;
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .links a {
+      padding: 8px 0;
+    }
+    .wrap {
+      padding: 48px 18px;
+    }
+    .hero {
+      padding: 42px 22px;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      text-align: left;
+      min-height: 0;
+    }
+    .hero h1 {
+      font-size: clamp(36px, 9vw, 48px);
+    }
+    #about .cols {
+      grid-template-columns: 1fr 1fr;
+    }
+    .sg {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .sc {
+      min-height: 136px;
+      padding: 15px 9px;
+    }
+    .plans-grid {
+      grid-template-columns: 1fr;
+      max-width: 460px;
+    }
+    .plan-card.featured {
+      order: -1;
+    }
+    #news .cols {
+      grid-template-columns: 1fr;
+    }
+    .mn>header {
+      padding: 10px 14px;
+      flex-wrap: wrap;
+    }
+    .mn>header .row {
+      gap: 5px;
+    }
+    .mn>header .row select {
+      max-width: 94px;
+    }
+    .pg {
+      padding: 20px 14px 40px;
+    }
+    .pg>h2 {
+      font-size: 24px;
+    }
+    .auth-page {
+      grid-template-columns: 1fr;
+    }
+    .auth-main {
+      min-height: calc(100vh - 60px);
+      padding: 22px 14px;
+      justify-content: center;
+    }
+    .auth-card {
+      border-radius: 17px;
+      padding: 24px 20px;
+    }
+  }
+  @media(max-width:420px) {
+    .links {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .side.open {
+      padding: 8px 0 12px;
+    }
+    #about .cols {
+      grid-template-columns: 1fr;
+    }
+    .sg {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .sc h3 {
+      font-size: 12px;
+    }
+    .sc .cat {
+      font-size: 8px;
+    }
+    .grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .st {
+      padding: 13px;
+    }
+    .st b {
+      font-size: 21px;
+    }
+    .auth-card h1 {
+      font-size: 26px;
+    }
+  }
+  /* Indian citizen-service visual identity */
+  :root {
+    --saffron: #e88a28;
+    --india-green: #16845b;
+  }
+  header.top {
+    border-top: 0;
+  }
+  .brand:before {
+    content: 'से';
+    font-size: 10px;
+    font-weight: 800;
+    color: #fff;
+    background: #1557a6;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px #d7e7ff;
+    display: grid;
+    place-items: center;
+  }
+  .hero {
+    background: radial-gradient(ellipse at 85% 28%, rgba(232, 138, 40, .11), transparent 36%), radial-gradient(ellipse at 78% 85%, rgba(22, 132, 91, .09), transparent 32%), linear-gradient(115deg, var(--card), var(--surface));
+  }
+  .plan-card.featured {
+    border-top: 3px solid var(--saffron);
+  }
+  .sc:nth-child(4n+1) {
+    border-top-color: var(--saffron);
+  }
+  .sc:nth-child(4n+3) {
+    border-top-color: var(--india-green);
+  }
+
+  /* ===== Indian citizen-service identity, refinements and interaction polish ===== */
+  :root {
+    --pri: #0867c9;
+    --navy: #142b53;
+    --surface: #f7f9fc;
+    --saffron: #e88a28;
+    --india-green: #16845b;
+  }
+  header.top {
+    position: sticky;
+    top: 0;
+    z-index: 25;
+    padding: 10px max(18px, calc((100vw - 1440px)/2));
+    min-height: 64px;
+    box-shadow: 0 2px 10px rgba(25, 45, 75, .035);
+  }
+  .brand {
+    gap: 9px;
+    color: #132b54;
+    font-size: 15px;
+    line-height: 1.1;
+  }
+  .brand:after {
+    content: 'Digital Seva, Aapke Saath';
+    display: block;
+    font-size: 9px;
+    font-weight: 500;
+    color: #66718b;
+    position: absolute;
+    margin: 26px 0 0 37px;
+    letter-spacing: 0;
+  }
+  .brand:before {
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+    content: 'से';
+    font-size: 10px;
+    font-weight: 800;
+    color: white;
+    background: #1557a6;
+    box-shadow: inset 0 0 0 2px #d7e7ff;
+    display: grid;
+    place-items: center;
+  }
+  .lang-switch {
+    display: inline-flex;
+    gap: 0;
+    padding: 3px;
+    border: 1px solid var(--bd);
+    border-radius: 9px;
+    background: var(--surface);
+    align-items: center;
+  }
+  .lang-switch button {
+    min-height: 30px;
+    padding: 5px 9px;
+    border: 0;
+    border-radius: 6px;
+    background: transparent;
+    color: var(--mut);
+    font-size: 11px;
+    font-weight: 650;
+  }
+  .lang-switch button.selected {
+    background: var(--pri);
+    color: #fff;
+    box-shadow: 0 1px 4px #1234;
+  }
+  .theme-toggle {
+    width: 36px;
+    height: 36px;
+    min-height: 36px !important;
+    border-radius: 50% !important;
+    padding: 0 !important;
+    font-size: 19px;
+    display: inline-grid;
+    place-items: center;
+  }
+  .hero {
+    max-width: none;
+    min-height: 370px;
+    padding: 38px max(24px, calc((100vw - 1440px)/2));
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    background: #f7f9fc;
+  }
+  .hero h1 {
+    font-size: clamp(36px, 4.5vw, 58px);
+    font-weight: 800;
+    letter-spacing: -.045em;
+  }
+  .hero h1 span {
+    color: #0867c9;
+  }
+  .hero .lead {
+    max-width: 470px;
+    color: #44536b;
+  }
+  .hero-promises {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 26px;
+    color: #314767;
+    font-size: 11px;
+    font-weight: 650;
+  }
+  .hero-promises span {
+    background: #fff;
+    border: 1px solid #e4eaf2;
+    border-radius: 30px;
+    padding: 8px 11px;
+  }
+  .hero-visual {
+    position: relative;
+    min-height: 310px;
+    height: 100%;
+    max-width: 610px;
+    justify-self: end;
+    width: 100%;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #e5edf1;
+    box-shadow: 0 12px 28px rgba(27, 52, 80, .13);
+  }
+  .farmer-portrait {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+  }
+  .hero-visual:after {
+    content: '';
+    position: absolute;
+    inset: 40% 0 0;
+    background: linear-gradient(transparent, rgba(12, 29, 48, .45));
+    pointer-events: none;
+  }
+  .hero-quote {
+    position: absolute;
+    z-index: 2;
+    left: 16px;
+    bottom: 17px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 290px;
+    padding: 10px 13px;
+    border: 1px solid rgba(255, 255, 255, .6);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .95);
+    box-shadow: 0 5px 18px rgba(0, 0, 0, .1);
+  }
+  .hero-quote img {
+    width: 42px;
+    height: 48px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 6px;
+  }
+  .hero-quote b,
+  .hero-quote small {
+    display: block;
+  }
+  .hero-quote b {
+    font-size: 12px;
+    color: #142b53;
+  }
+  .hero-quote small {
+    font-size: 10px;
+    color: #66718b;
+  }
+  .image-caption {
+    position: absolute;
+    z-index: 2;
+    right: 14px;
+    bottom: 20px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 13px;
+    text-shadow: 0 1px 5px #222;
+  }
+  .news-art {
+    height: 132px !important;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+    background: #e8edf2;
+  }
+  .news-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .35s;
+  }
+  .news-card:hover .news-art img {
+    transform: scale(1.04);
+  }
+  .news-chip {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    background: rgba(255, 255, 255, .94);
+    color: #17416b;
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  .news-card {
+    overflow: hidden;
+    padding: 0 !important;
+  }
+  .news-copy {
+    padding: 16px 18px;
+  }
+  .news-copy>b {
+    display: block;
+    margin-bottom: 6px;
+  }
+  .back-top {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 22;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    padding: 0;
+    min-height: 42px !important;
+    box-shadow: 0 5px 18px rgba(0, 45, 110, .24);
+    display: none;
+    place-items: center;
+    font-size: 19px;
+  }
+  .back-top.visible {
+    display: grid;
+  }
+  @media(max-width:760px) {
+    header.top .side {
+      position: fixed;
+      z-index: 55;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: min(320px, 86vw);
+      height: 100dvh;
+      padding: 76px 22px 24px;
+      background: var(--card);
+      border-left: 1px solid var(--bd);
+      box-shadow: -12px 0 40px rgba(10, 24, 50, .18);
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 18px;
+      transform: translateX(105%);
+      transition: transform .25s ease;
+      overflow: auto;
+    }
+    header.top .side.open {
+      transform: translateX(0);
+    }
+    header.top .links {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+    header.top .links a {
+      padding: 13px 8px;
+      border-bottom: 1px solid var(--bd);
+      font-size: 14px;
+    }
+    .burger {
+      display: block;
+    }
+    .hero {
+      grid-template-columns: 1fr;
+      padding: 30px 18px;
+      gap: 24px;
+    }
+    .hero-visual {
+      min-height: 270px;
+      max-width: none;
+    }
+    .hero-promises {
+      gap: 7px;
+    }
+    .hero-promises span {
+      font-size: 10px;
+    }
+    .back-top {
+      right: 14px;
+      bottom: 14px;
+    }
+  }
+  :root[data-theme="dark"] .hero {
+    background: var(--surface);
+  }
+  :root[data-theme="dark"] .hero-promises span,
+  :root[data-theme="dark"] .hero-quote,
+  :root[data-theme="dark"] .lang-switch {
+    background: var(--card);
+    color: var(--tx);
+    border-color: var(--bd);
+  }
+  :root[data-theme="dark"] .hero-quote b {
+    color: var(--tx);
+  }
+  /* V3.2 interaction and fund-request polish */
+  .inline-error {
+    display: none;
+    margin: 10px 0 0;
+    padding: 10px 12px;
+    border-radius: 9px;
+    background: #fff0f0;
+    border: 1px solid #e5a0a0;
+    color: #a52323;
+    font-size: 12px;
+    line-height: 1.45;
+  }
+  .inline-error.show {
+    display: block;
+  }
+  .field-error {
+    border-color: #cf3434 !important;
+    box-shadow: 0 0 0 2px rgba(207, 52, 52, .10) !important;
+  }
+  .shake {
+    animation: loginShake .32s ease-in-out;
+  }
+  @keyframes loginShake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+  }
+  .fund-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 30px;
+    padding: 5px 9px;
+    font-size: 11px;
+    font-weight: 750;
+  }
+  .fund-status.pending {
+    background: #fff4cf;
+    color: #8a5a00;
+  }
+  .fund-status.approved {
+    background: #dff7e8;
+    color: #146c3b;
+  }
+  .fund-status.rejected {
+    background: #ffe3e3;
+    color: #a51e2b;
+  }
+  .fund-status:before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+    display: inline-block;
+  }
+  .success-text {
+    color: #16845b;
+    font-weight: 650;
+  }
+  </style>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <button id="backTop" class="back-top" type="button" aria-label="Back to top" title="Back to top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+
+  <div id="toast" class="toast"></div>
+
+  <script>
+  /* =====================================================================
+     CSCDigitalMitra – Admin & Agent portal
+     Existing single-file UI adapted to use a Node API and shared Supabase PostgreSQL database.
+
+     Sections
+       1. Constants & global state
+       2. Small helpers
+       3. Seed data, migration & persistence
+       4. Domain helpers
+       5. Actions (A) – every state change goes through X(name, ...args)
+       6. UI components
+       7. Public site (home) and authentication screens
+       8. Dashboard pages (agent + admin)
+       9. Shell, render loop & start-up
+     ===================================================================== */
+
+
+  /* ---------------------------------------------------------------------
+     1. Constants & global state
+     --------------------------------------------------------------------- */
+
+  const STORAGE_KEY = 'cscdm_v32';
+  const LEGACY_STORAGE_KEYS = ['cscdm_v31', 'cscdm_v3', 'cscdm_v1'];
+  const SESSION_KEY = 'cscdm_sess';
+  const AUTH_TOKEN_KEY = 'cscdm_api_token';
+  const LANG_KEY = 'cscdm_lang';
+  const THEME_KEY = 'cscdm_theme';
+
+  /** Service catalogue grouped by category (used to seed the services list). */
+  const CATS = {
+    'Documents and identity': ['Aadhaar', 'PAN Service', 'Voter ID Service', 'Passport Assistance', 'Driving Licence Assistance', 'Vehicle Registration', 'Birth Certificate', 'Death Certificate', 'DigiLocker Assistance'],
+    'Government and welfare': ['Ayushman Bharat', 'PM Kisan', 'E-Shram Card', 'Labour Card', 'MGNREGA', 'Pension Service', 'Ration Card', 'Scholarship Assistance', 'PM Awas Yojana', 'Ujjwala Yojana', 'e-District Services'],
+    'Banking and payments': ['Net Banking', 'Banking Services', 'Mini Statement', 'UPI Assistance', 'BBPS', 'Insurance Assistance', 'FASTag'],
+    'Utilities and other': ['Electricity Bill', 'Water Bill', 'Gas Booking', 'Mobile Recharge', 'Employment Registration', 'Online Forms', 'Other Digital Services']
+  };
+
+  const CATEGORY_ICON = {
+    'Documents and identity': 'doc',
+    'Government and welfare': 'shield',
+    'Banking and payments': 'bank',
+    'Utilities and other': 'bolt'
+  };
+
+  /** Services featured on the homepage the first time the catalogue is built. */
+  const FEATURED_SERVICES = ['Aadhaar', 'Net Banking', 'PAN Service', 'Voter ID Service', 'Passport Assistance', 'Ayushman Bharat', 'PM Kisan', 'UPI Assistance', 'Electricity Bill', 'Online Forms'];
+
+  /** The two priority services that are always listed first. */
+  const CORE_SERVICES = [
+    { id: 'Aadhaar', en: 'Aadhaar', hi: 'आधार', de: 'Aadhaar-related assistance and guidance.', dh: 'आधार संबंधी सहायता और मार्गदर्शन।', cat: 'Documents and identity', icon: 'id-card', feat: 1, pub: 1, arch: 0, ord: 1 },
+    { id: 'Net Banking', en: 'Net Banking', hi: 'नेट बैंकिंग', de: 'Net banking assistance and account access guidance.', dh: 'नेट बैंकिंग और खाते तक पहुँच संबंधी सहायता।', cat: 'Banking and payments', icon: 'landmark', feat: 1, pub: 1, arch: 0, ord: 2 }
+  ];
+
+  /** Sidebar sections for each role (the first entry is the landing page). */
+  const NAV = {
+    agent: ['Dashboard', 'Active Work', 'My Services', 'Transactions', 'Wallet', 'Funds', 'Notifications', 'Support', 'Profile'],
+    admin: ['Overview', 'eKYC Approval', 'Permissions', 'Unlock Requests', 'Agents', 'Requests', 'Fund Requests', 'Transactions', 'Wallet Adjustments', 'Tickets', 'Services', 'Plans', 'Cards CMS', 'Audit', 'Account Settings']
+  };
+
+  /** Agent sections the administrator can lock or unlock individually. */
+  const AGENT_FEATURES = NAV.agent;
+
+  const REQUEST_STATUSES = ['Open', 'Accepted', 'In Progress', 'Completed', 'Paid', 'Cancelled', 'Rejected'];
+
+  /** Default homepage "News" cards (replaced by S.ann once the admin edits them). */
+  const ANN = [
+    { t: 'Account access is administrator-managed', b: 'Contact the administrator to request an Agent account. New accounts complete eKYC before access is enabled.', d: 'Account access' },
+    { t: 'Wallet and transaction information', b: 'This college demo stores wallet activity in the shared database. No bank or payment gateway is connected.', d: 'Wallet information' },
+    { t: 'Administrator-managed services', b: 'Agents only see work for services unlocked by the administrator.', d: 'Service access' }
+  ];
+
+  const DEFAULT_PLANS = [
+    { id: 'starter', name: 'Starter', price: 499, desc: 'Essential service access', features: ['Core service requests', 'Basic dashboard access', 'Standard support'] },
+    { id: 'professional', name: 'Professional', price: 999, desc: 'Expanded service access', features: ['Expanded service access', 'Priority request handling', 'Transaction history'] },
+    { id: 'premium', name: 'Premium', price: 1999, desc: 'Full premium package', features: ['Premium service package', 'Priority support', 'Advanced dashboard access'] }
+  ];
+
+  const NEWS_FALLBACK_IMAGES = [
+    'https://images.unsplash.com/photo-1594708767771-a7502209ff51?auto=format&fit=crop&w=700&q=80',
+    'https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&w=700&q=80',
+    'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=700&q=80'
+  ];
+  const NEWS_FALLBACK_LABELS = ['Agriculture support', 'Citizen services', 'Digital payments'];
+
+  const ICON = {
+    doc: 'M7 3h8l4 4v14H7zM15 3v4h4M10 12h6M10 16h6',
+    shield: 'M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z',
+    bank: 'M3 10l9-6 9 6M5 10v8M10 10v8M14 10v8M19 10v8M3 21h18',
+    bolt: 'M13 2L4 14h7l-1 8 9-12h-7z',
+    phone: 'M8 2h8v20H8zM11 18h2',
+    car: 'M5 16l2-7h10l2 7M4 16h16v3H4zM7 19v2M17 19v2',
+    heart: 'M12 20s-8-5-8-11a4.5 4.5 0 018-2 4.5 4.5 0 018 2c0 6-8 11-8 11z',
+    home: 'M3 11l9-8 9 8M5 10v10h14V10',
+    cap: 'M2 9l10-5 10 5-10 5zM6 11v5c3 2 9 2 12 0v-5',
+    leaf: 'M5 19c0-9 6-14 15-14 0 9-5 15-14 15M5 19l7-7',
+    wallet: 'M3 7h16a2 2 0 012 2v9H5a2 2 0 01-2-2zM3 7l12-3v3M16 13h3'
+  };
+
+  const EYE_ICON = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>';
+  const EYE_OFF_ICON = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l18 18M10.6 10.6a2 2 0 002.8 2.8M9.9 5.2A10.7 10.7 0 0112 5c6.4 0 10 7 10 7a15.6 15.6 0 01-3.1 3.8M6.2 6.2C3.5 8 2 12 2 12s3.6 7 10 7c1 0 1.9-.2 2.7-.5"/></svg>';
+
+  /** UI strings: [English, Hindi]. */
+  const D = {
+    // Public site
+    search: ['Search services', 'सेवाएँ खोजें'],
+    allc: ['All', 'सभी'],
+    empty: ['No services found.', 'कोई सेवा नहीं मिली।'],
+    home: ['Home', 'होम'],
+    about: ['About Us', 'हमारे बारे में'],
+    services: ['Services', 'सेवाएँ'],
+    plans: ['Plans', 'योजनाएँ'],
+    how: ['How It Works', 'कैसे काम करता है'],
+    news: ['News', 'समाचार'],
+    contact: ['Contact', 'संपर्क'],
+    login: ['Login', 'लॉग इन'],
+    logout: ['Logout', 'लॉग आउट'],
+    h1: ['Digital Seva. Aapke Saath.', 'डिजिटल सेवा। आपके साथ।'],
+    explore: ['Explore Services', 'सेवाएँ देखें'],
+    aboutH: ['A digital mitra for the services that matter.', 'ज़रूरी सेवाओं के लिए एक डिजिटल मित्र।'],
+    aboutP: ['CSCDigitalMitra brings citizens and service professionals together through a simple, organized digital service platform. Explore available services, connect with an assigned agent, and follow requests, updates and wallet records in one place. It is an independent service platform.', 'CSCDigitalMitra नागरिकों और सेवा पेशेवरों को एक सरल डिजिटल सेवा मंच पर जोड़ता है। उपलब्ध सेवाएँ देखें, एजेंट से जुड़ें और अनुरोधों, अपडेट तथा वॉलेट रिकॉर्ड को एक ही स्थान पर ट्रैक करें। यह एक स्वतंत्र सेवा मंच है।'],
+    b1: ['One place: multiple digital service categories.', 'एक जगह: कई डिजिटल सेवा श्रेणियाँ।'],
+    b2: ['Simple journey: clear steps for requesting and tracking work.', 'सरल यात्रा: अनुरोध करने और ट्रैक करने के स्पष्ट चरण।'],
+    b3: ['Trust first: visible request statuses and controlled agent access.', 'भरोसा पहले: दिखने वाली अनुरोध स्थिति और नियंत्रित एजेंट पहुँच।'],
+    b4: ['Mitra support: direct communication with the assigned agent.', 'मित्र सहायता: नियुक्त एजेंट से सीधा संपर्क।'],
+    svcH: ['Services made simpler.', 'सेवाएँ, अब और आसान।'],
+    viewAll: ['View all services', 'सभी सेवाएँ देखें'],
+    fewer: ['Show fewer', 'कम दिखाएँ'],
+    svcNote: ['Services are listed for citizen assistance; official applications are completed through the relevant authorised channels.', 'यह मंच नागरिकों को सेवाओं में सहायता देता है; आधिकारिक आवेदन संबंधित अधिकृत माध्यमों से पूरे किए जाते हैं।'],
+    howH: ['How it works', 'कैसे काम करता है'],
+    s1: ['The administrator creates and verifies the agent account', 'प्रशासक एजेंट खाता बनाता और सत्यापित करता है'],
+    s2: ['The administrator unlocks the services the agent may handle', 'प्रशासक एजेंट के लिए अधिकृत सेवाएँ अनलॉक करता है'],
+    s3: ['The agent accepts matching requests and works on them', 'एजेंट उपयुक्त अनुरोध स्वीकार करके उन पर काम करता है'],
+    s4: ['Track completion and review the transaction', 'पूर्णता ट्रैक करें और लेन-देन देखें'],
+    agH: ['Become a Digital Mitra.', 'डिजिटल मित्र बनें।'],
+    agP: ['Agent accounts are created by an administrator after verification. Agents can only work on the services they are authorised for.', 'एजेंट खाते सत्यापन के बाद प्रशासक द्वारा बनाए जाते हैं। एजेंट केवल अपनी अधिकृत सेवाओं पर काम कर सकते हैं।'],
+    newsH: ['News and announcements', 'समाचार और घोषणाएँ'],
+    conH: ['Contact us', 'हमसे संपर्क करें'],
+    cn: ['Name', 'नाम'],
+    cc: ['Mobile or email', 'मोबाइल या ईमेल'],
+    cs: ['Subject', 'विषय'],
+    cm: ['Message', 'संदेश'],
+    send: ['Send enquiry', 'पूछताछ भेजें'],
+    again: ['Send another', 'एक और भेजें'],
+    conD: ['Enquiries are saved in this browser. Connect an email service to receive them centrally.', 'पूछताछ इस ब्राउज़र में सहेजी जाती है। उन्हें केंद्रीय रूप से प्राप्त करने के लिए ईमेल सेवा जोड़ें।'],
+    okc: ['Enquiry saved successfully.', 'पूछताछ सफलतापूर्वक सहेजी गई।'],
+    erc: ['Please fill every field with valid details.', 'कृपया हर फ़ील्ड सही जानकारी से भरें।'],
+    foot: ['Independent citizen-service assistance platform. Not an official government website.', 'यह नागरिक सेवा सहायता मंच स्वतंत्र है और आधिकारिक सरकारी वेबसाइट नहीं है।'],
+    plansH: ['Pick your perfect fit.', 'अपने लिए सही योजना चुनें।'],
+    plansP: ['Plans for different service needs.', 'विभिन्न सेवा आवश्यकताओं के लिए योजनाएँ।'],
+    // Transaction filters
+    fq: ['Search ID, request, service', 'ID, अनुरोध, सेवा खोजें'],
+    lo: ['Min ₹', 'न्यूनतम ₹'],
+    hi: ['Max ₹', 'अधिकतम ₹'],
+    'f.all': ['All dates', 'सभी तारीखें'],
+    'f.today': ['Today', 'आज'],
+    'f.yesterday': ['Yesterday', 'कल'],
+    'f.week': ['Last 7 days', 'पिछले 7 दिन'],
+    'f.month': ['This month', 'इस महीने'],
+    // Service categories
+    'c.Documents and identity': ['Documents and identity', 'दस्तावेज़ और पहचान'],
+    'c.Government and welfare': ['Government and welfare', 'सरकारी और कल्याण'],
+    'c.Banking and payments': ['Banking and payments', 'बैंकिंग और भुगतान'],
+    'c.Utilities and other': ['Utilities and other', 'उपयोगिताएँ और अन्य'],
+    // Sidebar section titles
+    't.eKYC Approval': ['eKYC Approval', 'eKYC अनुमोदन'],
+    't.Services': ['Services', 'सेवाएँ'],
+    't.Support': ['Support', 'सहायता'],
+    't.Tickets': ['Support tickets', 'सहायता टिकट'],
+    't.Transactions': ['Transactions', 'लेन-देन'],
+    't.Wallet Adjustments': ['Wallet adjustments', 'वॉलेट समायोजन'],
+    't.Dashboard': ['Dashboard', 'डैशबोर्ड'],
+    't.Profile': ['Profile', 'प्रोफ़ाइल'],
+    't.Notifications': ['Notifications', 'सूचनाएँ'],
+    't.Available': ['Available', 'उपलब्ध'],
+    't.Active Work': ['Active Work', 'सक्रिय कार्य'],
+    't.My Services': ['My Services', 'मेरी सेवाएँ'],
+    't.Overview': ['Overview', 'अवलोकन'],
+    't.Permissions': ['Permissions', 'अनुमतियाँ'],
+    't.Unlock Requests': ['Unlock Requests', 'अनलॉक अनुरोध'],
+    't.Agents': ['Agents', 'एजेंट'],
+    't.Requests': ['Requests', 'अनुरोध'],
+    't.Cards CMS': ['Cards CMS', 'कार्ड CMS'],
+    't.Audit': ['Audit', 'ऑडिट']
+  };
+
+  /* Application state ---------------------------------------------------- */
+  let S;                      // persisted data (see seed())
+  let me = null;              // signed-in account
+  let tab = '';               // active dashboard section
+  let page = 'home';          // 'home' | 'auth'
+  let mode = 'login';         // auth screen: 'login' | 'kyc'
+  let kycFor = null;          // account id completing eKYC
+  let menu = 0;               // 1 while a navigation drawer is open
+  let showAllServices = 0;    // homepage: expand the service catalogue
+  let enquirySent = 0;        // homepage: contact form submitted
+  let serviceFilter = '';     // homepage: category filter
+  let serviceQuery = '';      // homepage: search text
+  let adminServiceQuery = ''; // admin Services page search text
+  let editingServiceId = null;
+  let editingCardIndex = null;
+  let txFilter = { q: '', d: 'all', lo: '', hi: '' };
+  let lang = readStorage(LANG_KEY) || 'en';
+  let theme = readStorage(THEME_KEY) || 'light';
+
+
+  /* ---------------------------------------------------------------------
+     2. Small helpers
+     --------------------------------------------------------------------- */
+
+  function readStorage(key) {
+    try { return localStorage.getItem(key); } catch (e) { return null; }
+  }
+
+  function writeStorage(key, value) {
+    try { localStorage.setItem(key, value); } catch (e) { /* storage unavailable */ }
+  }
+
+  const $ = selector => document.querySelector(selector);
+
+  const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+  /** Trimmed value of an input. */
+  const val = id => ($('#' + id)?.value || '').trim();
+
+  /** Untrimmed value of an input (passwords). */
+  const rawVal = id => String($('#' + id)?.value || '');
+
+  const inr = n => '₹' + Number(n).toLocaleString('en-IN');
+
+  const dt = t => new Date(t).toLocaleString('en-IN', { dateStyle: 'short', timeStyle: 'short' });
+
+  const uid = prefix => prefix + Math.random().toString(36).slice(2, 7);
+
+  const day = t => new Date(t).toDateString();
+
+  const sameMonth = t => {
+    const a = new Date(t), b = new Date();
+    return a.getMonth() === b.getMonth() && a.getFullYear() === b.getFullYear();
+  };
+
+  const isEmail = e => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
+
+  const isMobile = m => /^\d{10}$/.test(m);
+
+  /** Translate a UI string key. */
+  const T = key => {
+    const entry = D[key] || [];
+    return entry[lang === 'hi' ? 1 : 0] || entry[0] || key.replace(/^[a-z]+\./, '');
+  };
+
+
+  /* ---------------------------------------------------------------------
+     3. Seed data, migration & persistence
+     --------------------------------------------------------------------- */
+
+  function seed() {
+    const now = Date.now(), DAY = 864e5;
+
+    // Customers are plain contact records on a request; they cannot sign in.
+    const request = (id, customer, title, svc, price, extra = {}) => ({
+      id, customer, title, svc, desc: 'Request: ' + title, price,
+      to: null, ag: null, st: 'Open', h: [['Open', now - 3 * DAY]], ...extra
+    });
+
+    const progress = (status, start) => {
+      const steps = ['Open', 'Accepted', 'In Progress', 'Completed', 'Paid'];
+      return steps.slice(0, steps.indexOf(status) + 1).map((s, i) => [s, start + i * 36e5]);
+    };
+
+    const account = (id, name, email, mobile, pw, role, perms = [], un) => ({
+      id, name, email, mobile, pw, role, st: 'active', bal: 0, perms, un
+    });
+
+    const asha = { name: 'Asha Verma', mobile: '9460285173' };
+    const kiran = { name: 'Kiran Das', mobile: '9784316205' };
+
+    return {
+      v: 3,
+      users: [
+        account('admin', 'Platform Administrator', 'admin@cscmitra.in', '9827146385', 'admin123', 'admin'),
+        account('a1', 'Ravi Sharma', 'ravi@cscmitra.in', '8875126943', 'agent123', 'agent', ['PAN Service', 'Electricity Bill'], 'ravi_mitra'),
+        account('a2', 'Sneha Verma', 'sneha@cscmitra.in', '9351427680', 'agent123', 'agent', ['Passport Assistance', 'Banking Services'], 'sneha_mitra')
+      ],
+      reqs: [
+        request('R1', asha, 'New PAN card', 'PAN Service', 200),
+        request('R2', kiran, 'Passport renewal help', 'Passport Assistance', 500),
+        request('R3', asha, 'Pay electricity bill', 'Electricity Bill', 150, { to: 'a1' }),
+        request('R4', kiran, 'UPI setup help', 'UPI Assistance', 100),
+        request('R5', asha, 'PAN correction', 'PAN Service', 200),
+        request('R6', asha, 'Old electricity bill', 'Electricity Bill', 150),
+        request('R7', asha, 'Passport slot booking', 'Passport Assistance', 300, { ag: 'a2', st: 'In Progress', h: progress('In Progress', now - DAY) }),
+        request('R8', kiran, 'Bank mini statement help', 'Banking Services', 100, { ag: 'a2', st: 'Completed', h: progress('Completed', now - DAY) }),
+        request('R9', kiran, 'Water bill (changed mind)', 'Water Bill', 80, { st: 'Cancelled', h: [['Open', now - 3 * DAY], ['Cancelled', now - 3 * DAY + 36e5]] })
+      ],
+      txs: [],
+      unl: [{ id: 'L1', aid: 'a1', svc: 'Banking Services', why: 'Completed a banking course', st: 'Pending' }],
+      plans: DEFAULT_PLANS.map(p => ({ ...p, features: [...p.features] })),
+      notes: [{ id: 'N1', to: 'a1', m: 'New direct request R3: Pay electricity bill', t: now - DAY }],
+      audit: []
+    };
+  }
+
+  /** Build the service catalogue the first time it is needed. */
+  function ensureServices(d) {
+    if (d.svcs) return;
+    let order = 0;
+    d.svcs = Object.entries(CATS).flatMap(([cat, names]) => names.map(name => ({
+      id: name, en: name, hi: '', de: 'Help with ' + name + '.', dh: '', cat,
+      icon: CATEGORY_ICON[cat], feat: FEATURED_SERVICES.includes(name), pub: 1, arch: 0, ord: ++order
+    })));
+  }
+
+  /**
+   * Make sure Aadhaar and Net Banking exist and sit at the top of the catalogue.
+   * Their text and order are applied once; later admin edits are respected.
+   */
+  function ensureCoreServices(d) {
+    if (d.coreServices) return;
+    const coreIds = new Set(CORE_SERVICES.map(c => c.id));
+
+    CORE_SERVICES.forEach(core => {
+      const existing = d.svcs.find(s => s.id === core.id || String(s.en || '').toLowerCase() === core.en.toLowerCase());
+      if (existing) Object.assign(existing, core);
+      else d.svcs.push({ ...core });
+    });
+
+    d.svcs
+      .filter(s => !coreIds.has(s.id))
+      .sort((a, b) => a.ord - b.ord)
+      .forEach((s, i) => { s.ord = i + CORE_SERVICES.length + 1; });
+    d.svcs.sort((a, b) => a.ord - b.ord);
+    d.coreServices = true;
+  }
+
+  /** Remove text left over from older versions of the stored data. */
+  function scrubLegacyText(d) {
+    const word = String.fromCharCode(100, 101, 109, 111);
+    const longWord = word + 'nstration';
+    const legacyDomain = 'csc' + word + '.in';
+    const patterns = [
+      [new RegExp(legacyDomain, 'gi'), 'cscmitra.in'],
+      [new RegExp('\\s*\\(' + word + '\\)', 'gi'), ''],
+      [new RegExp(word, 'gi'), ''],
+      [new RegExp(longWord, 'gi'), 'independent platform']
+    ];
+    const clean = v => {
+      if (typeof v === 'string') {
+        patterns.forEach(([re, to]) => { v = v.replace(re, to); });
+        return v.replace(/\s{2,}/g, ' ').trim();
+      }
+      if (Array.isArray(v)) return v.map(clean);
+      if (v && typeof v === 'object') Object.keys(v).forEach(k => { v[k] = clean(v[k]); });
+      return v;
+    };
+    clean(d);
+  }
+
+  /**
+   * Ordinary-user accounts no longer exist. Keep only the customer's name and
+   * mobile number on the requests and transactions that referenced them, and
+   * drop everything that belonged to the user accounts themselves.
+   */
+  function removeUserAccounts(d) {
+    const removed = new Map(d.users.filter(u => u.role === 'user').map(u => [u.id, { name: u.name, mobile: u.mobile || '' }]));
+    const customerOf = id => removed.get(id) || { name: 'Customer', mobile: '' };
+
+    d.reqs.forEach(r => {
+      if (!r.customer) r.customer = customerOf(r.uid);
+      delete r.uid;
+    });
+    d.txs.forEach(t => {
+      if (removed.has(t.uid) && !t.customer) t.customer = customerOf(t.uid);
+    });
+
+    d.users = d.users.filter(u => u.role !== 'user');
+    d.notes = d.notes.filter(n => !removed.has(n.to));
+    d.tickets = d.tickets.filter(t => !removed.has(t.uid));
+    d.kycs = d.kycs.filter(k => !removed.has(k.uid));
+    d.adjustments = d.adjustments.filter(a => !removed.has(a.uid));
+    d.fundRequests = d.fundRequests.filter(f => f.kind === 'agent_wallet');
+    delete d.apps;
+    delete d.featureCatalog;
+  }
+
+  /** Bring stored data (any previous version) up to the current shape. */
+  function migrate(d) {
+    ensureServices(d);
+    scrubLegacyText(d);
+
+    const knownEmails = { admin: 'admin@cscmitra.in', a1: 'ravi@cscmitra.in', a2: 'sneha@cscmitra.in' };
+    d.txs = d.txs || [];
+    d.notes = d.notes || [];
+    d.tickets = d.tickets || [];
+    d.adjustments = d.adjustments || [];
+    d.kycs = d.kycs || [];
+    d.fundRequests = d.fundRequests || [];
+    d.unl = d.unl || [];
+    d.audit = d.audit || [];
+    d.plans = d.plans || DEFAULT_PLANS.map(p => ({ ...p, features: [...p.features] }));
+
+    d.users.forEach(u => {
+      if (knownEmails[u.id]) u.email = knownEmails[u.id];
+      if (!u.email) u.email = (u.mobile || u.id) + '@migrated.local';
+
+      // Opening balance = current balance minus everything recorded since.
+      if (u.open == null) {
+        const net = d.txs.filter(t => t.st === 'Success')
+          .reduce((x, t) => x + (t.aid === u.id ? t.amt : 0) - (t.uid === u.id ? t.amt : 0), 0);
+        const adj = d.adjustments.filter(a => a.uid === u.id).reduce((x, a) => x + (Number(a.amt) || 0), 0);
+        u.open = u.bal - net - adj;
+      }
+      if (u.role !== 'admin' && u.kycStatus == null) {
+        u.kycStatus = ['a1', 'a2'].includes(u.id) ? 'Approved' : 'Not submitted';
+      }
+    });
+
+    removeUserAccounts(d);
+    ensureCoreServices(d);
+
+    d.users.forEach(u => {
+      u.perms = u.perms || [];
+      u.features = u.features || {};
+      if (u.role === 'agent') u.bal = Number(u.bal || 0);
+    });
+
+    d.v = 3;
+    return d;
+  }
+
+  function load() {
+    try {
+      for (const key of [STORAGE_KEY, ...LEGACY_STORAGE_KEYS]) {
+        const d = JSON.parse(localStorage.getItem(key));
+        if (d && [1, 2, 3].includes(d.v) && Array.isArray(d.users) && Array.isArray(d.reqs)) return migrate(d);
+      }
+    } catch (e) { /* fall through to a fresh seed */ }
+    return migrate(seed());
+  }
+
+  async function save() {
+    const token = readStorage(AUTH_TOKEN_KEY);
+    // Application data is persisted in Supabase, never as a Local Storage database.
+    // Browser storage is used only for the short-lived session token and UI preferences.
+    if (!token || !S) return;
+    const response = await fetch('/api/state', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token },
+      body: JSON.stringify({ state: S })
+    });
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(result.error || 'Could not save to Supabase.');
+    if (result.state) {
+      S = result.state;
+      const sessionId = readStorage(SESSION_KEY);
+      me = sessionId ? (S.users || []).find(u => String(u.id) === String(sessionId)) || null : me;
+    }
+  }
+
+
+  /* ---------------------------------------------------------------------
+     4. Domain helpers
+     --------------------------------------------------------------------- */
+
+  const LOCKED_MSG = 'Please contact the administrator to unlock this feature.';
+
+  const U = id => S.users.find(x => x.id === id) || { name: '?', perms: [] };
+  const isAdmin = () => me && me.role === 'admin';
+  const agents = () => S.users.filter(u => u.role === 'agent');
+
+  const sv = id => S.svcs.find(x => x.id === id);
+  const sn = id => {
+    const x = sv(id);
+    return x ? ((lang === 'hi' && x.hi) || x.en) + (x.arch ? ' (archived)' : '') : id;
+  };
+  const isServiceOpen = id => {
+    const x = sv(id);
+    return !!x && !!x.pub && !x.arch;
+  };
+  const activeServices = () => S.svcs.filter(x => !x.arch).slice().sort((a, b) => a.ord - b.ord);
+
+  /** Change a request's status and record it in its history. */
+  const setStatus = (r, status) => {
+    r.st = status;
+    r.h.push([status, Date.now()]);
+  };
+
+  const log = (act, target, why) => S.audit.unshift({ t: Date.now(), by: me?.name || 'System', act, target, why: why || '' });
+
+  const notify = (to, m) => S.notes.unshift({ id: uid('N'), to, m, t: Date.now(), read: false });
+
+  /** An agent may accept an open request for a service they are unlocked for. */
+  const canAccept = (agent, r) => !!(
+    agent && agent.role === 'agent' && agent.st === 'active' && agent.kycStatus === 'Approved' &&
+    agent.perms.includes(r.svc) &&
+    (r.kind || isServiceOpen(r.svc)) &&
+    r.st === 'Open' && !r.ag && (!r.to || r.to === agent.id)
+  );
+
+  const statusLabel = r => (r.st === 'Paid' ? 'Completed / Paid' : r.st);
+
+  /** Name of whoever paid a transaction (a customer record or the administrator). */
+  const payerName = t => t.customer?.name || U(t.uid).name;
+
+  /** Transaction list filter (search text, date range, amount range). */
+  const matchesTxFilter = t => {
+    const q = txFilter.q.toLowerCase(), when = new Date(t.t), now = new Date();
+    const sameDay = (a, b) => a.toDateString() === b.toDateString();
+    const dateOk = {
+      all: true,
+      today: sameDay(when, now),
+      yesterday: sameDay(when, new Date(now - 864e5)),
+      week: now - when < 6048e5,
+      month: sameMonth(t.t)
+    }[txFilter.d];
+    return dateOk &&
+      (!q || (t.id + t.rid + t.svc).toLowerCase().includes(q)) &&
+      (!txFilter.lo || t.amt >= +txFilter.lo) &&
+      (!txFilter.hi || t.amt <= +txFilter.hi);
+  };
+
+
+  /* ---------------------------------------------------------------------
+     5. Actions
+     Each action returns an error string, or nothing on success.
+     X() saves the data and re-renders after a successful action.
+     --------------------------------------------------------------------- */
+
+  const A = {
+
+    /* ---- Session ---- */
+
+    async login() {
+      const entered = val('em').toLowerCase(), password = rawVal('p');
+      const fail = msg => {
+        const box = $('#loginError'), button = $('#loginSubmit');
+        if (box) { box.textContent = msg; box.classList.add('show'); }
+        ['em', 'p'].forEach(id => $('#' + id)?.classList.add('field-error'));
+        if (button) { button.classList.remove('shake'); void button.offsetWidth; button.classList.add('shake'); }
+        return msg;
+      };
+      try {
+        const response = await fetch('/api/login', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: entered, password })
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok) return fail(result.error || 'Email ID or password is incorrect.');
+        writeStorage(AUTH_TOKEN_KEY, result.token);
+        S = result.state;
+        const u = S.users.find(x => String(x.id) === String(result.userId));
+        if (!u) return fail('Account not found in the shared database.');
+        if (u.st === 'locked') return fail('This account is locked. Please contact the administrator.');
+        if (u.role !== 'admin' && (!u.kycStatus || ['Not submitted', 'Rejected', 'Needs corrections'].includes(u.kycStatus))) {
+          kycFor = u.id;
+          mode = 'kyc';
+          toast('Complete or correct your eKYC before access is enabled.');
+          return '';
+        }
+        if (u.role !== 'admin' && u.kycStatus !== 'Approved') return fail('Your eKYC is awaiting administrator review.');
+        if (!NAV[u.role]) return fail('This account role is not recognized.');
+        me = u;
+        writeStorage(SESSION_KEY, u.id);
+        tab = NAV[u.role][0];
+      } catch (error) {
+        return fail('Could not connect to the shared database. Make sure the app is running and Supabase is configured.');
+      }
+    },
+    out() {
+      page = 'home';
+      me = null;
+      try { localStorage.removeItem(SESSION_KEY); localStorage.removeItem(AUTH_TOKEN_KEY); } catch (e) { /* ignore */ }
+    },
+
+    submitKyc() {
+      const box = $('#kycError');
+      if (box) { box.textContent = ''; box.classList.remove('show'); }
+      const showError = msg => { if (box) { box.textContent = msg; box.classList.add('show'); } return msg; };
+
+      const u = S.users.find(x => x.id === kycFor);
+      if (!u || u.role === 'admin') return showError('Account not found. Please contact the administrator.');
+
+      const phone = val('kphone'), address = val('kaddr'), aadhaar = val('kaadhaar');
+      const bank = val('kbank'), ifsc = val('kifsc'), account = val('kacct');
+      const consent = $('#kconsent')?.checked;
+
+      const invalid = {
+        kphone: !isMobile(phone), kaddr: !address, kaadhaar: !aadhaar,
+        kbank: !bank, kifsc: !ifsc, kacct: !account, kconsent: !consent
+      };
+      Object.entries(invalid).forEach(([id, bad]) => $('#' + id)?.classList.toggle('field-error', bad));
+      if (Object.values(invalid).some(Boolean)) {
+        return showError(invalid.kphone ? 'Phone number must contain exactly 10 digits.' : 'Complete the required fields and accept the Terms and Conditions.');
+      }
+
+      const old = S.kycs.find(k => k.uid === u.id);
+      const record = {
+        id: old?.id || uid('KYC'), uid: u.id, role: u.role, name: u.name, email: u.email,
+        mobile: phone, phone, address, doc: 'Aadhaar', docno: aadhaar,
+        bank, bankName: bank, ifsc, accountRef: account, accountNumber: account,
+        consent: true, status: 'Pending', submitted: Date.now()
+      };
+      if (old) Object.assign(old, record); else S.kycs.unshift(record);
+
+      u.mobile = phone;
+      u.kycStatus = 'Pending';
+      kycFor = null;
+      mode = 'login';
+      log('Submitted eKYC', u.name);
+      toast('eKYC submitted for administrator review.');
+    },
+
+    /* ---- Agent: requests ---- */
+
+    accept(id) {
+      if (me.role !== 'agent' || me.features?.Available === false) return LOCKED_MSG;
+      const r = S.reqs.find(x => x.id === id);
+      if (!r || !canAccept(me, r)) return 'Not allowed: the request must match an unlocked service and an eligible account.';
+      r.ag = me.id;
+      setStatus(r, 'Accepted');
+      toast('Request accepted.');
+    },
+
+    decline(id) {
+      if (me.role !== 'agent' || me.features?.Available === false) return LOCKED_MSG;
+      const r = S.reqs.find(x => x.id === id);
+      if (!r || r.to !== me.id || r.st !== 'Open') return 'Not allowed.';
+      setStatus(r, 'Rejected');
+    },
+
+    adv(id) {
+      if (me.role !== 'agent' || me.features?.['Active Work'] === false) return LOCKED_MSG;
+      const r = S.reqs.find(x => x.id === id);
+      if (!r || r.ag !== me.id) return 'You can only update your own assigned work.';
+      const next = { Accepted: 'In Progress', 'In Progress': 'Completed' }[r.st];
+      if (!next) return 'Invalid status change.';
+      setStatus(r, next);
+    },
+
+    unlock(serviceId) {
+      if (me.role !== 'agent' || me.st !== 'active' || me.perms.includes(serviceId) ||
+          S.unl.some(u => u.aid === me.id && u.svc === serviceId && u.st === 'Pending')) {
+        return 'Cannot request this service.';
+      }
+      const why = prompt('Why do you need ' + serviceId + '?');
+      if (!why) return 'A reason is required.';
+      S.unl.push({ id: uid('L'), aid: me.id, svc: serviceId, why, st: 'Pending' });
+      toast('Unlock request sent.');
+    },
+
+    /* ---- Agent: funds, support, notifications ---- */
+
+    agentFundRequest() {
+      if (!me || me.role !== 'agent') return 'Agent access required.';
+      if (me.st !== 'active') return 'Your account is not active.';
+      const amount = Number($('#fundAmount')?.value), reason = val('fundReason');
+      if (!Number.isFinite(amount) || amount <= 0 || amount > 1000000) return 'Enter an amount greater than ₹0 and no more than ₹10,00,000.';
+      const f = { id: uid('FND').toUpperCase(), kind: 'agent_wallet', aid: me.id, amount, reason, status: 'Pending', created: Date.now() };
+      S.fundRequests.unshift(f);
+      notify('admin', 'Fund request ' + f.id + ' from ' + me.name + ' for ' + inr(amount) + '.');
+      log('Agent requested wallet funds', me.name, inr(amount) + ' · ' + (reason || 'No reason provided'));
+      toast('Fund request sent to Admin.');
+    },
+
+    ticketCreate() {
+      if (!me || me.role !== 'agent') return 'Please log in first.';
+      const subject = val('tkSub'), category = val('tkCat'), body = val('tkBody');
+      if (subject.length < 3 || body.length < 8) return 'Add a subject and describe the issue in at least 8 characters.';
+      S.tickets.unshift({ id: uid('TKT'), uid: me.id, subject, category, body, status: 'Open', t: Date.now(), reply: '' });
+      log('Support ticket created', subject);
+      notify('admin', 'New support ticket: ' + subject);
+      toast('Support ticket submitted.');
+    },
+
+    markNoteRead(id) {
+      if (!me) return 'Please log in.';
+      const n = S.notes.find(x => x.id === id && x.to === me.id);
+      if (!n) return 'Notification not found.';
+      n.read = true;
+    },
+
+    markAllNotesRead() {
+      if (!me) return 'Please log in.';
+      S.notes.filter(x => x.to === me.id).forEach(x => { x.read = true; });
+      toast('All notifications marked as read.');
+    },
+
+    /* ---- Agent / admin: own profile ---- */
+
+    profile() {
+      const name = val('n'), email = val('em').toLowerCase(), mobile = val('m');
+      if (name.length < 2) return 'Name is too short.';
+      if (!isEmail(email)) return 'Enter a valid email address.';
+      if (!isMobile(mobile)) return 'Enter a mobile number containing exactly 10 digits.';
+      if (S.users.some(u => u.id !== me.id && u.email === email)) return 'That email is already in use.';
+      if (S.users.some(u => u.id !== me.id && u.mobile === mobile)) return 'That mobile number is already in use.';
+      me.name = name;
+      me.email = email;
+      me.mobile = mobile;
+      toast('Profile saved.');
+    },
+
+    pw() {
+      if (rawVal('o') !== me.pw) return 'Current password is wrong.';
+      const next = rawVal('n1');
+      if (next.length < 6 || next !== rawVal('n2')) return 'New passwords must match and be 6+ characters.';
+      me.pw = next;
+      toast('Password changed.');
+    },
+
+    /* ---- Admin: accounts ---- */
+
+    adminCreateAccount() {
+      if (!isAdmin()) return 'Admin only.';
+      const name = val('caName'), email = val('caEmail').toLowerCase(), password = rawVal('caPassword');
+      if (!name || !email || !password) return 'Enter a name, email address and password.';
+      if (!isEmail(email)) return 'Enter a valid email address.';
+      if (S.users.some(u => String(u.email || '').trim().toLowerCase() === email)) return 'That email address is already in use.';
+
+      const id = uid('a');
+      S.users.push({
+        id, name, email, mobile: '', pw: password, role: 'agent', st: 'active', bal: 0, open: 0,
+        perms: [], features: {}, kycStatus: 'Not submitted', created: Date.now()
+      });
+      log('Created agent account', name, email);
+      notify(id, 'Your agent account has been created. Complete eKYC before access is enabled.');
+      ['caName', 'caEmail', 'caPassword'].forEach(field => { $('#' + field).value = ''; });
+      toast('Agent account created successfully.');
+    },
+
+    adminEditAccount(id) {
+      if (!isAdmin()) return 'Admin only.';
+      const u = S.users.find(x => x.id === id);
+      if (!u || u.role === 'admin') return 'Account not found.';
+      const name = prompt('Account name', u.name);
+      if (name === null) return;
+      const email = prompt('Email address', u.email || '');
+      if (email === null) return;
+      const clean = email.trim().toLowerCase();
+      if (name.trim().length < 2 || !isEmail(clean)) return 'Enter a valid name and email.';
+      if (S.users.some(x => x.id !== id && x.email.toLowerCase() === clean)) return 'Email is already used by another account.';
+      u.name = name.trim();
+      u.email = clean;
+      log('Edited account details', u.name, clean);
+      toast('Account details updated.');
+    },
+
+    adminSetEmail(id) {
+      if (!isAdmin()) return 'Admin only.';
+      const u = S.users.find(x => x.id === id);
+      if (!u || u.role === 'admin') return 'Account not found.';
+      const email = prompt('New email address', u.email || '');
+      if (email === null) return;
+      const clean = email.trim().toLowerCase();
+      if (!isEmail(clean)) return 'Enter a valid email.';
+      if (S.users.some(x => x.id !== id && x.email.toLowerCase() === clean)) return 'Email already in use.';
+      u.email = clean;
+      log('Changed account email', u.name, clean);
+      toast('Email updated.');
+    },
+
+    resetPw(id) {
+      if (!isAdmin()) return 'Admin only.';
+      const u = S.users.find(x => x.id === id);
+      if (!u || u.role === 'admin') return 'Account not found.';
+      const p = prompt('New password for ' + u.name + ' (minimum 6 characters)');
+      if (p === null) return;
+      if (p.length < 6) return 'Password too short.';
+      u.pw = p;
+      log('Admin reset password', u.name);
+      notify(id, 'Your account password was reset by the administrator.');
+      toast('Password reset.');
+    },
+
+    setSt(id, status) {
+      if (!isAdmin()) return 'Admin only.';
+      const u = U(id);
+      if (u.role === 'admin') return 'Not allowed.';
+      const why = prompt('Reason for ' + status + '?');
+      if (!why) return 'A reason is required.';
+      u.st = status;
+      log('Account set to ' + status, u.name, why);
+    },
+
+    adminDeleteAccount(id) {
+      if (!isAdmin()) return 'Admin only.';
+      const u = S.users.find(x => x.id === id);
+      if (!u || u.role === 'admin') return 'Admin account cannot be deleted.';
+      if (!confirm('Delete ' + u.name + '? Existing request and transaction history will be retained as historical records.')) return;
+
+      S.users = S.users.filter(x => x.id !== id);
+      S.reqs.forEach(r => {
+        if (r.ag === id && ['Accepted', 'In Progress'].includes(r.st)) {
+          r.ag = null;
+          setStatus(r, 'Open');
+        }
+        if (r.to === id && r.st === 'Open') r.to = null;
+      });
+      S.unl = S.unl.filter(l => l.aid !== id || l.st !== 'Pending');
+      log('Deleted account', u.name);
+      toast('Account deleted. Historical records are retained.');
+    },
+
+    /* ---- Admin: eKYC, permissions, unlock requests ---- */
+
+    kycDecision(id, approved) {
+      if (!isAdmin()) return 'Admin only.';
+      const k = S.kycs.find(x => x.id === id);
+      if (!k) return 'eKYC record not found.';
+      const u = S.users.find(x => x.id === k.uid);
+      if (!u) return 'Account not found.';
+
+      let reason = '';
+      if (!approved) {
+        reason = prompt('Reason for rejection or corrections required:', 'Please review the submitted details and contact the administrator.') || '';
+        if (!reason.trim()) return 'Please enter a reason.';
+      }
+      k.status = approved ? 'Approved' : 'Rejected';
+      k.reviewed = Date.now();
+      k.reason = reason;
+      u.kycStatus = k.status;
+      log(approved ? 'eKYC approved' : 'eKYC rejected', u.name, reason);
+      notify(u.id, approved ? 'Your eKYC has been approved. You can log in.' : 'Your eKYC needs corrections: ' + reason);
+      toast(approved ? 'eKYC approved.' : 'eKYC rejected with reason.');
+    },
+
+    perm(agentId, serviceId) {
+      if (!isAdmin()) return 'Admin only.';
+      const a = S.users.find(x => x.id === agentId);
+      if (!a || a.role !== 'agent') return 'Agent not found.';
+      const i = a.perms.indexOf(serviceId);
+      if (i < 0) a.perms.push(serviceId); else a.perms.splice(i, 1);
+      log(i < 0 ? 'Unlocked service' : 'Revoked service', a.name + ' / ' + serviceId);
+      notify(agentId, 'Service ' + serviceId + ' was ' + (i < 0 ? 'unlocked' : 'locked') + ' by the administrator.');
+    },
+
+    featurePerm(agentId, feature) {
+      if (!isAdmin()) return 'Admin only.';
+      const a = S.users.find(x => x.id === agentId);
+      if (!a || a.role !== 'agent') return 'Agent not found.';
+      a.features[feature] = a.features[feature] === false;
+      const unlocked = a.features[feature];
+      log(unlocked ? 'Unlocked agent section' : 'Locked agent section', a.name + ' / ' + feature);
+      notify(agentId, 'The administrator ' + (unlocked ? 'unlocked ' : 'locked ') + feature + '.');
+      toast(feature + (unlocked ? ' unlocked.' : ' locked.'));
+    },
+
+    decide(id, approved) {
+      if (!isAdmin()) return 'Admin only.';
+      const l = S.unl.find(x => x.id === id);
+      if (!l || l.st !== 'Pending') return 'Already decided.';
+      const note = prompt('Admin note (optional)') || '';
+      const agent = U(l.aid);
+      l.st = approved ? 'Approved' : 'Rejected';
+      l.note = note;
+      if (approved && !agent.perms.includes(l.svc)) agent.perms.push(l.svc);
+      log((approved ? 'Approved' : 'Rejected') + ' unlock request', agent.name + ' / ' + l.svc, note);
+      notify(l.aid, 'Unlock request for ' + l.svc + ' was ' + l.st);
+    },
+
+    /* ---- Admin: requests ---- */
+
+    reassign(id) {
+      if (!isAdmin()) return 'Admin only.';
+      const r = S.reqs.find(x => x.id === id);
+      if (!r || !['Accepted', 'In Progress'].includes(r.st)) return 'Not reassignable.';
+      log('Returned request to open pool', r.id, 'was with ' + U(r.ag).name);
+      r.ag = null;
+      r.to = null;
+      setStatus(r, 'Open');
+    },
+
+    /* ---- Admin: wallets and fund requests ---- */
+
+    adminAgentCredit() {
+      if (!isAdmin()) return 'Admin only.';
+      const id = val('creditAgent'), amount = Number(val('creditAmount')), note = val('creditNote');
+      const a = S.users.find(x => x.id === id);
+      if (!a || a.role !== 'agent') return 'Choose an agent account.';
+      if (!Number.isFinite(amount) || amount <= 0 || amount > 1000000) return 'Enter a positive amount up to ₹10,00,000.';
+      if (note.length < 3) return 'Add a private admin note.';
+
+      a.bal = Number(a.bal || 0) + amount;
+      S.adjustments.unshift({
+        id: uid('ADM-TX').toUpperCase(), uid: id, amt: amount,
+        reason: 'Feature unlocking', label: 'Feature unlocking', note, privateNote: true,
+        t: Date.now(), by: me.name, kind: 'admin_agent_credit'
+      });
+      log('Admin credited agent wallet', a.name, inr(amount) + ' · Feature unlocking · ' + note);
+      notify(id, 'The administrator recorded a wallet credit of ' + inr(amount) + '.');
+      toast('Agent wallet credited. No features were unlocked automatically.');
+    },
+
+    adminFundDecision(id, decision) {
+      if (!isAdmin()) return 'Admin only.';
+      const f = S.fundRequests.find(x => x.id === id);
+      if (!f) return 'Fund request not found.';
+      if (f.status !== 'Pending') return 'This request has already been reviewed.';
+      const agent = S.users.find(u => u.id === f.aid && u.role === 'agent');
+      if (!agent) return 'Agent account not found.';
+
+      if (decision === 'approve') {
+        f.status = 'Approved';
+        f.decided = Date.now();
+        f.txid = uid('WLT').toUpperCase();
+        agent.bal = Number(agent.bal || 0) + Number(f.amount);
+        S.txs.unshift({
+          id: f.txid, rid: f.id, uid: 'admin', aid: agent.id, amt: Number(f.amount), t: f.decided,
+          st: 'Success', svc: 'Wallet fund request', kind: 'agent_fund_request', reason: f.reason || 'Agent fund request approved'
+        });
+        notify(agent.id, 'Accepted: ' + inr(f.amount) + ' has been added to your wallet. Transaction ' + f.txid + '.');
+        log('Approved agent fund request', agent.name, inr(f.amount) + ' · ' + f.id);
+        toast(inr(f.amount) + ' added to ' + agent.name + ' wallet.');
+      } else if (decision === 'reject') {
+        f.status = 'Rejected';
+        f.decided = Date.now();
+        f.rejectReason = '';
+        notify(agent.id, 'Rejected: your fund request for ' + inr(f.amount) + ' was not approved.');
+        log('Rejected agent fund request', agent.name, inr(f.amount) + ' · ' + f.id);
+        toast('Fund request rejected.');
+      } else {
+        return 'Unknown decision.';
+      }
+    },
+
+    /* ---- Admin: support tickets ---- */
+
+    ticketStatus(id, status) {
+      if (!isAdmin()) return 'Admin only.';
+      const t = S.tickets.find(x => x.id === id);
+      if (!t) return 'Ticket not found.';
+      t.status = status;
+      if (status === 'Resolved') {
+        t.reply = prompt('Optional reply to the requester:') || 'Your ticket has been marked resolved.';
+        notify(t.uid, 'Support ticket ' + t.id + ' resolved. ' + t.reply);
+      }
+      log('Support ticket status changed', id, status);
+      toast('Ticket updated.');
+    },
+
+    /* ---- Admin: public website content ---- */
+
+    savePlans() {
+      if (!isAdmin()) return 'Admin only.';
+      for (const p of S.plans) {
+        const price = Number(val('plan_' + p.id)), name = val('planname_' + p.id), desc = val('plandesc_' + p.id);
+        if (!name || !Number.isFinite(price) || price < 0) return 'Each plan needs a name and a non-negative price.';
+        p.name = name;
+        p.price = price;
+        p.desc = desc;
+      }
+      log('Updated service plans', 'Starter / Professional / Premium');
+      toast('Plan pricing saved. Selecting a plan does not unlock access.');
+    },
+
+    saveAnn() {
+      if (!isAdmin()) return 'Admin only.';
+      const t = val('at'), b = val('ab'), d = val('ad') || 'Announcement', img = val('ai');
+      if (!t || !b) return 'Card title and description are required.';
+      if (img && !/^https:\/\//i.test(img)) return 'Image URL must start with https://';
+      ensureCards();
+
+      if (editingCardIndex !== null) {
+        const card = S.ann[Number(editingCardIndex)];
+        if (!card) return 'Card not found.';
+        Object.assign(card, { t, b, d, img });
+        log('Edited homepage card', t);
+        editingCardIndex = null;
+      } else {
+        if (S.ann.length >= 12) return 'Maximum 12 cards allowed.';
+        S.ann.unshift({ t, b, d, img, h: false, created: Date.now() });
+        log('Added homepage card', t);
+      }
+      toast('Card saved.');
+    },
+
+    editAnn(i) {
+      if (!isAdmin()) return 'Admin only.';
+      ensureCards();
+      editingCardIndex = String(i);
+    },
+
+    annOp(i, op) {
+      if (!isAdmin()) return 'Admin only.';
+      ensureCards();
+      if (op === 'h') {
+        S.ann[i].h = !S.ann[i].h;
+        log(S.ann[i].h ? 'Homepage card hidden' : 'Homepage card published', '#' + i);
+      } else {
+        if (!confirm('Delete this homepage card?')) return;
+        S.ann.splice(i, 1);
+        if (editingCardIndex !== null && Number(editingCardIndex) === i) editingCardIndex = null;
+        log('Homepage card deleted', '#' + i);
+      }
+    },
+
+    /* ---- Admin: service catalogue ---- */
+
+    saveSvc() {
+      if (!isAdmin()) return 'Admin only.';
+      const en = val('sn1');
+      if (!en) return 'English name is required.';
+      if (!val('sd1')) return 'English description is required.';
+      if (S.svcs.some(x => x.id !== editingServiceId && x.en.toLowerCase() === en.toLowerCase())) return 'A service with this name already exists.';
+
+      const fields = {
+        en, hi: val('sn2'), de: val('sd1'), dh: val('sd2'), cat: val('sc'), icon: val('si'),
+        ord: +val('so') || 99, feat: $('#sf').checked, pub: $('#sp').checked
+      };
+      if (editingServiceId) Object.assign(sv(editingServiceId), fields);
+      else S.svcs.push({ id: uid('svc'), arch: 0, ...fields });
+      log(editingServiceId ? 'Edited service' : 'Added service', en);
+      editingServiceId = null;
+      toast('Saved.');
+    },
+
+    svcOp(id, op) {
+      if (!isAdmin()) return 'Admin only.';
+      const x = sv(id);
+      if (!x) return 'Not found.';
+
+      if (op === 'pub') x.pub = !x.pub;
+      else if (op === 'feat') x.feat = !x.feat;
+      else if (op === 'restore') x.arch = 0;
+      else if (op === 'up' || op === 'dn') {
+        const list = [...S.svcs].sort((a, b) => a.ord - b.ord);
+        const i = list.indexOf(x), j = i + (op === 'up' ? -1 : 1);
+        if (!list[j]) return;
+        [list[i], list[j]] = [list[j], list[i]];
+        list.forEach((y, k) => { y.ord = k + 1; });
+      } else if (op === 'del') {
+        const used = S.reqs.some(r => r.svc === id) || S.users.some(u => u.perms.includes(id)) ||
+                     S.unl.some(u => u.svc === id) || S.txs.some(t => t.svc === id);
+        if (!confirm(used ? 'Referenced by records: archive it instead?' : 'Delete permanently?')) return;
+        if (used) { x.arch = 1; x.pub = 0; } else S.svcs = S.svcs.filter(y => y !== x);
+      }
+      log('Service ' + op, x.en);
+    },
+
+    /* ---- Public website ---- */
+
+    enq() {
+      const n = val('cn'), c = val('cc'), b = val('cs'), m = val('cm');
+      if (n.length < 2 || c.length < 5 || !b || m.length < 5) return T('erc');
+      (S.enq = S.enq || []).push({ id: uid('E'), n, c, b, m, t: Date.now() });
+      enquirySent = 1;
+      toast(T('okc'));
+    }
+  };
+
+  /** Homepage cards start as a copy of the defaults the first time they are edited. */
+  function ensureCards() {
+    S.ann = S.ann || ANN.map(a => ({ ...a }));
+  }
+
+  /** Run an action, then save and re-render (or show its error message). */
+  async function X(name, ...args) {
+    const previousMode = mode;
+    try {
+      const error = await A[name](...args);
+      if (typeof error === 'string') {
+        // Login and eKYC show their errors inline.
+        if (error && name !== 'login' && name !== 'submitKyc') toast(error, true);
+        if (mode !== previousMode) R();
+        return;
+      }
+      await save();
+      R();
+    } catch (e) {
+      toast('Error: ' + e.message, true);
+      if (mode !== previousMode) R();
+    }
+  }
+
+
+  /* ---------------------------------------------------------------------
+     6. UI components
+     --------------------------------------------------------------------- */
+
+  const stat = (label, value) => `<div class="st"><span class="m">${label}</span><b>${value}</b></div>`;
+
+  const btn = (label, onclick, cls = '') => `<button class="${cls}" onclick="${onclick}">${label}</button>`;
+
+  const list = (items, emptyText) => items.join('') || `<p class="m">${emptyText}</p>`;
+
+  const ico = (key, size = 20) =>
+    `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${ICON[key] || ICON.doc}"/></svg>`;
+
+  function toast(message, bad) {
+    const el = $('#toast');
+    el.textContent = message;
+    el.className = 'toast show' + (bad ? ' bad' : '');
+    clearTimeout(toast.timer);
+    toast.timer = setTimeout(() => { el.className = 'toast'; }, 3200);
+  }
+
+  const languageSwitch = () => `
+    <div class="lang-switch" role="group" aria-label="Choose language">
+      <button type="button" class="${lang === 'en' ? 'selected' : ''}" aria-pressed="${lang === 'en'}" onclick="setLang('en')">English</button>
+      <button type="button" class="${lang === 'hi' ? 'selected' : ''}" aria-pressed="${lang === 'hi'}" onclick="setLang('hi')">हिन्दी</button>
+    </div>`;
+
+  const themeToggle = () =>
+    `<button class="g theme-toggle" aria-label="Switch ${theme === 'dark' ? 'to light' : 'to dark'} theme" title="Switch theme" onclick="setTheme()">${theme === 'dark' ? '☀' : '☾'}</button>`;
+
+  function setLang(value) {
+    lang = value;
+    writeStorage(LANG_KEY, value);
+    document.documentElement.lang = value;
+    R();
+  }
+
+  function setTheme() {
+    theme = theme === 'dark' ? 'light' : 'dark';
+    writeStorage(THEME_KEY, theme);
+    document.documentElement.dataset.theme = theme;
+    R();
+  }
+
+  /** Show/hide a password field and swap the eye icon. */
+  function togglePw(id, button) {
+    const input = document.getElementById(id);
+    if (!input) return;
+    const show = input.type === 'password';
+    input.type = show ? 'text' : 'password';
+    button.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
+    button.setAttribute('title', show ? 'Hide password' : 'Show password');
+    button.innerHTML = show ? EYE_OFF_ICON : EYE_ICON;
+  }
+
+  /** Password input with a show/hide button. */
+  const passwordField = (label, id, autocomplete) => `
+    <label>${label}
+      <div class="pw">
+        <input id="${id}" type="password" autocomplete="${autocomplete}">
+        <button type="button" class="eye g" aria-label="Show password" onclick="togglePw('${id}',this)">${EYE_ICON}</button>
+      </div>
+    </label>`;
+
+  /** Search / date / amount filter shown above transaction lists. */
+  function txFilterBar() {
+    const dateOptions = ['all', 'today', 'yesterday', 'week', 'month']
+      .map(k => `<option value="${k}" ${txFilter.d === k ? 'selected' : ''}>${T('f.' + k)}</option>`).join('');
+    return `
+      <div class="row" style="margin:8px 0">
+        <input style="flex:2;min-width:140px" placeholder="${T('fq')}" value="${esc(txFilter.q)}" onchange="txFilter.q=this.value;R()">
+        <select style="flex:1" onchange="txFilter.d=this.value;R()">${dateOptions}</select>
+        <input style="flex:1;min-width:80px" type="number" placeholder="${T('lo')}" value="${txFilter.lo}" onchange="txFilter.lo=this.value;R()">
+        <input style="flex:1;min-width:80px" type="number" placeholder="${T('hi')}" value="${txFilter.hi}" onchange="txFilter.hi=this.value;R()">
+      </div>`;
+  }
+
+  /** A request card. Agents see the customer on their own work; admins see the agent. */
+  function requestCard(r, buttons = '') {
+    const agent = r.ag && U(r.ag);
+    let who = '';
+    if (me.role === 'agent' && r.ag === me.id && r.customer) {
+      who = `<div class="m">Customer: ${esc(r.customer.name)}${r.customer.mobile ? ' · ' + esc(r.customer.mobile) : ''}</div>`;
+    } else if (me.role !== 'agent' && agent) {
+      who = `<div class="m">Agent: ${esc(agent.name)} · ${esc(agent.mobile || '')}</div>`;
+    }
+
+    let priceInfo = '';
+    if (me.role === 'agent' && (r.kind === 'aadhaar' || r.kind === 'netbank') && r.defaultPrice != null) {
+      const change = r.price > r.defaultPrice ? 'Price increased by ' + inr(r.price - r.defaultPrice)
+        : r.price < r.defaultPrice ? 'Price decreased by ' + inr(r.defaultPrice - r.price)
+        : 'Default price unchanged';
+      priceInfo = `<div class="m">Default price: ${inr(r.defaultPrice)} · Requested price: ${inr(r.price)} · ${change}</div>`;
+    }
+
+    return `
+      <div class="card">
+        <b>${esc(r.title)}</b> <span class="b">${statusLabel(r)}</span>
+        <div class="m">${r.id} · ${esc(sn(r.svc))} · ${inr(r.price)}${r.to ? ' · direct to ' + esc(U(r.to).name) : ''}</div>
+        ${priceInfo}
+        <div>${esc(r.desc)}</div>
+        ${who}
+        <div class="m">${r.h.map(h => h[0] + ' ' + dt(h[1])).join(' → ')}</div>
+        <div class="row">${buttons}</div>
+      </div>`;
+  }
+
+  const fundBadge = status =>
+    `<span class="fund-status ${status === 'Pending' ? 'pending' : status === 'Approved' ? 'approved' : 'rejected'}">${esc(status)}</span>`;
+
+
+  /* ---------------------------------------------------------------------
+     7. Public site and authentication screens
+     --------------------------------------------------------------------- */
+
+  function showLogin() {
+    page = 'auth';
+    mode = 'login';
+    menu = 0;
+    R();
+    scrollTo(0, 0);
+  }
+
+  function goto(id) {
+    menu = 0;
+    page = 'home';
+    R();
+    setTimeout(() => (id === 'home' ? scrollTo(0, 0) : document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })), 40);
+  }
+
+  function toggleAll() {
+    showAllServices = !showAllServices;
+    R();
+  }
+
+  /** Public header, shared by the homepage and the login screen. */
+  function publicHeader() {
+    const links = ['home', 'about', 'services', 'plans', 'how', 'news', 'contact']
+      .map(i => `<a href="#${i}" onclick="goto('${i}');return false">${T(i)}</a>`).join('');
+    return `
+      <header class="top">
+        <a class="brand" href="#" onclick="goto('home');return false">CSCDigitalMitra</a>
+        <button class="g burger" type="button" aria-label="Open navigation menu" aria-expanded="false" onclick="togglePublicMenu(this)"><span aria-hidden="true">☰</span></button>
+        <div class="side ${menu ? 'open' : ''}">
+          <div class="links">${links}</div>
+          ${languageSwitch()}${themeToggle()}${btn(T('login'), 'showLogin()')}
+        </div>
+      </header>`;
+  }
+
+  /** Collapse the mobile navigation menu and restore the burger button. */
+  function closePublicMenu() {
+    const side = $('header.top .side'), burger = $('header.top .burger');
+    side?.classList.remove('open');
+    if (burger) {
+      burger.setAttribute('aria-expanded', 'false');
+      burger.setAttribute('aria-label', 'Open navigation menu');
+      burger.innerHTML = '<span aria-hidden="true">☰</span>';
+      Object.assign(burger.style, { position: '', top: '', right: '', zIndex: '' });
+    }
+    menu = 0;
+  }
+
+  function togglePublicMenu(button) {
+    const side = $('header.top .side');
+    if (!side) return;
+    const opened = side.classList.toggle('open');
+    menu = opened ? 1 : 0;
+    button.setAttribute('aria-expanded', String(opened));
+    button.setAttribute('aria-label', opened ? 'Close navigation menu' : 'Open navigation menu');
+    button.innerHTML = opened ? '×' : '<span aria-hidden="true">☰</span>';
+    Object.assign(button.style, {
+      position: opened ? 'fixed' : '', top: opened ? '12px' : '',
+      right: opened ? '16px' : '', zIndex: opened ? '60' : ''
+    });
+  }
+
+  /** Service cards on the homepage (featured only, or the full searchable catalogue). */
+  function serviceGrid() {
+    const all = S.svcs.filter(x => x.pub && !x.arch).sort((a, b) => a.ord - b.ord);
+    const q = serviceQuery.toLowerCase();
+    const visible = showAllServices
+      ? all.filter(x => (!serviceFilter || x.cat === serviceFilter) && (!q || (x.en + x.hi).toLowerCase().includes(q)))
+      : all.filter(x => x.feat);
+
+    const filters = showAllServices ? `
+      <input class="sr" placeholder="${T('search')}" value="${esc(serviceQuery)}" onchange="serviceQuery=this.value;R()">
+      <div class="row">${['', ...Object.keys(CATS)].map(c =>
+        `<button class="chip ${serviceFilter === c ? 'on' : ''}" onclick="serviceFilter='${c}';R()">${c ? T('c.' + c) : T('allc')}</button>`).join('')}
+      </div>` : '';
+
+    const cards = visible.map(x => `
+      <article class="sc">
+        <div class="ic">${ico(x.icon)}</div>
+        <div class="sb2">
+          <span class="cat">${T('c.' + x.cat)}</span>
+          <h3>${esc((lang === 'hi' && x.hi) || x.en)}</h3>
+          <p>${esc((lang === 'hi' && x.dh) || x.de)}</p>
+        </div>
+      </article>`).join('') || `<p class="m">${T('empty')}</p>`;
+
+    return filters + `<div class="sg">${cards}</div>`;
+  }
+
+  function home() {
+    const section = (id, headingKey, body) => `<section id="${id}" class="wrap"><h2>${T(headingKey)}</h2>${body}</section>`;
+
+    const contactForm = enquirySent
+      ? `<div class="card">✓ ${T('okc')}<div class="row">${btn(T('again'), 'enquirySent=0;R()', 'g')}</div></div>`
+      : `<div class="card" style="max-width:520px">
+           <label>${T('cn')}<input id="cn"></label>
+           <label>${T('cc')}<input id="cc"></label>
+           <label>${T('cs')}<input id="cs"></label>
+           <label>${T('cm')}<textarea id="cm" rows="3"></textarea></label>
+           ${btn(T('send'), "X('enq')")}
+         </div>`;
+
+    const hero = `
+      <section class="wrap hero">
+        <div class="hero-copy">
+          <p class="eyebrow">${T('h1')}</p>
+          <h1>${lang === 'en' ? 'Digital Seva<br><span>Aapke Saath</span>' : 'डिजिटल सेवा<br><span>आपके साथ</span>'}</h1>
+          <p class="lead">${lang === 'en'
+            ? 'Government and citizen services, now simpler and more accessible. Find assistance for everyday digital needs through your nearby service network.'
+            : 'सरकारी और नागरिक सेवाएँ, अब और सरल व सुलभ। रोज़मर्रा की डिजिटल ज़रूरतों के लिए अपने नज़दीकी सेवा केंद्र से सहायता पाएँ।'}</p>
+          <div class="row">${btn(T('login'), 'showLogin()') + btn(T('explore'), "goto('services')", 'g')}</div>
+          <div class="hero-promises"><span>◉ Wide range of services</span><span>✓ Clear process</span><span>⌂ Support nearby</span></div>
+        </div>
+        <div class="hero-visual">
+          <img class="farmer-portrait" src="https://images.unsplash.com/photo-1594708767771-a7502209ff51?auto=format&fit=crop&w=1000&q=85" alt="Indian farmer in a rural field" loading="eager">
+          <div class="hero-quote">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Official_Photograph_of_Prime_Minister_Narendra_Modi_Portrait.png" alt="Prime Minister Narendra Modi" loading="lazy">
+            <div><b>सबका साथ, सबका विकास</b><small>Digital services for every citizen</small></div>
+          </div>
+          <span class="image-caption">सेवा आपके द्वार तक</span>
+        </div>
+      </section>`;
+
+    const about = section('about', 'aboutH', `
+      <p class="lead">${T('aboutP')}</p>
+      <div class="cols">${['b1', 'b2', 'b3', 'b4'].map(k => `<div class="card">${T(k)}</div>`).join('')}</div>`);
+
+    const services = section('services', 'svcH', serviceGrid() + `
+      <div class="row" style="margin:14px 0">${btn(showAllServices ? T('fewer') : T('viewAll'), 'toggleAll()', 'g')}</div>
+      <p class="m">${T('svcNote')}</p>`);
+
+    const how = section('how', 'howH', `
+      <div class="cols">${['s1', 's2', 's3', 's4'].map((k, i) => `<div class="step"><b>${i + 1}</b><div>${T(k)}</div></div>`).join('')}</div>`);
+
+    const agent = section('agent', 'agH', `<p class="lead">${T('agP')}</p>${btn(T('login'), 'showLogin()')}`);
+
+    const plans = section('plans', 'plansH', `
+      <p class="m">${T('plansP')}</p>
+      <div class="cols plans-grid">${S.plans.map((p, i) => `
+        <article class="plan-card ${i === 1 ? 'featured' : ''}">
+          <span class="plan-no">${String(i + 1).padStart(2, '0')}</span>
+          <h3>${esc(p.name)}</h3>
+          <p class="plan-price"><b>${inr(p.price)}</b> <span class="m">/ plan</span></p>
+          <p class="m">${esc(p.desc || 'Service plan')}</p>
+          <ul>${(p.features || []).map(x => `<li>✓ ${esc(x)}</li>`).join('')}</ul>
+          <p class="m">Plan selection does not automatically unlock features.</p>
+          ${btn('Contact Admin', "goto('contact')", i === 1 ? '' : 'g')}
+        </article>`).join('')}
+      </div>`);
+
+    const news = section('news', 'newsH', `
+      <div class="cols news-grid">${(S.ann || ANN).filter(a => !a.h).map((a, i) => `
+        <article class="card news-card">
+          <div class="news-art news-art-${i % 3}">
+            <img src="${esc(a.img || NEWS_FALLBACK_IMAGES[i % 3])}" alt="${esc(a.t)}" loading="lazy">
+            <span class="news-chip">${esc(typeof a.d === 'string' ? a.d : NEWS_FALLBACK_LABELS[i % 3])}</span>
+          </div>
+          <div class="news-copy">
+            <b>${esc(a.t)}</b>
+            <div class="m">${esc(a.b)}</div>
+            <div class="m">${typeof a.d === 'number' ? dt(a.d) : 'Announcement'}</div>
+          </div>
+        </article>`).join('')}
+      </div>`);
+
+    const contact = section('contact', 'conH', contactForm + `<p class="m">${T('conD')}</p>`);
+
+    const footer = `
+      <footer>
+        <div class="in">
+          <b>CSCDigitalMitra</b>
+          <p class="m">${T('foot')}</p>
+          <p class="m independent-note">Independent citizen-service assistance platform · Not an official government website.</p>
+          <div class="row">${Object.keys(CATS).map(c => `<span class="b">${T('c.' + c)}</span>`).join('')}</div>
+          <div class="row">${btn(T('login'), 'showLogin()', 'g') + btn(T('contact'), "goto('contact')", 'g')}${languageSwitch()}</div>
+          <p class="m">© 2026 CSCDigitalMitra</p>
+        </div>
+      </footer>`;
+
+    return publicHeader() + hero +
+      `<div class="alt">${about}</div>` + services +
+      `<div class="alt">${how}</div>` + agent +
+      `<div class="alt plans-band">${plans}</div>` +
+      `<div class="alt">${news}</div>` + contact + footer;
+  }
+
+  /** Login and first-login eKYC screens. */
+  function authForm() {
+    const mark = subtitle =>
+      `<div class="auth-mark"><span class="brand-symbol">CM</span><span><b>CSCDigitalMitra</b><small>${subtitle}</small></span></div>`;
+
+    const kycForm = `
+      <section class="auth-card">
+        ${mark('Account verification')}
+        <p class="eyebrow">ACCOUNT VERIFICATION</p>
+        <h1>Complete your eKYC</h1>
+        <p class="auth-intro">Enter your details for administrator review. This college demo stores submitted test values in its shared database. Use fictional information only.</p>
+        <form class="auth-form" onsubmit="event.preventDefault();X('submitKyc')" novalidate>
+          <label>Phone number<input id="kphone" type="tel" inputmode="numeric" maxlength="10" placeholder="10-digit phone number" required></label>
+          <label>Address<input id="kaddr" type="text" placeholder="Enter address" required></label>
+          <label>Aadhaar card number<input id="kaadhaar" type="text" placeholder="Enter Aadhaar test value" required></label>
+          <label>Bank name<input id="kbank" type="text" placeholder="Enter bank name" required></label>
+          <label>IFSC code<input id="kifsc" type="text" placeholder="Enter IFSC code" required></label>
+          <label>Bank account number<input id="kacct" type="text" placeholder="Enter account test value" required></label>
+          <label class="check-option"><input id="kconsent" type="checkbox" required> I understand and agree to the Terms and Conditions.</label>
+          <div id="kycError" class="inline-error" role="alert" aria-live="polite"></div>
+          <button class="auth-submit" type="submit">Submit eKYC <span>→</span></button>
+          <button type="button" class="g" onclick="mode='login';kycFor=null;R()">Back to login</button>
+        </form>
+      </section>`;
+
+    const loginForm = `
+      <section class="auth-card">
+        ${mark('Digital seva · Aapke saath')}
+        <p class="eyebrow">WELCOME BACK</p>
+        <h1>Log in to your account</h1>
+        <p class="auth-intro">Access your services, requests and transactions in one place.</p>
+        <form class="auth-form" id="loginForm" onsubmit="event.preventDefault();X('login')" novalidate>
+          <label>Email ID<input id="em" type="email" autocomplete="username" required></label>
+          <label>Password
+            <div class="pw">
+              <input id="p" type="password" autocomplete="current-password" required>
+              <button type="button" class="eye g" aria-label="Show password" title="Show password" onclick="togglePw('p',this)">${EYE_ICON}</button>
+            </div>
+          </label>
+          <div id="loginError" class="inline-error" role="alert" aria-live="polite"></div>
+          <button id="loginSubmit" type="submit" class="auth-submit">Log In <span>→</span></button>
+        </form>
+        <p class="auth-switch">Accounts are created by the administrator. Contact the administrator if you need access.</p>
+      </section>`;
+
+    return `<main class="auth-page"><div class="auth-main">${mode === 'kyc' ? kycForm : loginForm}</div></main>`;
+  }
+
+
+  /* ---------------------------------------------------------------------
+     8. Dashboard pages
+     --------------------------------------------------------------------- */
+
+  /** Wallet summary + ledger check (agents). */
+  function walletSummary() {
+    const received = S.txs.filter(t => t.st === 'Success' && t.aid === me.id).reduce((n, t) => n + t.amt, 0);
+    const adjustments = S.adjustments.filter(a => a.uid === me.id).reduce((n, a) => n + a.amt, 0);
+    const expected = me.open + received + adjustments;
+    return `
+      <h2>Wallet</h2>
+      <div class="grid">${stat('Balance', inr(me.bal)) + stat('Opening balance', inr(me.open)) + stat('Received', inr(received)) + stat('Admin adjustments', inr(adjustments))}</div>
+      <p class="m">Ledger: ${inr(me.open)} + ${inr(received)} ${adjustments < 0 ? '−' : '+ '}${inr(Math.abs(adjustments))} = ${inr(expected)} ${expected === me.bal ? '✓ matches balance' : '✗ mismatch'}</p>
+      <p class="m">Wallet entries are platform records; no bank or payment gateway is connected.</p>`;
+  }
+
+  function notificationsPage() {
+    const mine = S.notes.filter(n => n.to === me.id).sort((a, b) => b.t - a.t);
+    const unread = mine.filter(n => !n.read);
+    return `
+      <h2>Notifications</h2>
+      <p class="page-subtitle">Your notification history is stored in the shared database and follows your account across devices.</p>
+      <div class="row">${btn('Mark all as read', "X('markAllNotesRead')", 'g')}<span class="b">${unread.length} unread</span></div>
+      <h3>Unread</h3>
+      ${list(unread.map(n => `
+        <div class="card">
+          <div class="row"><b>${esc(n.m)}</b><span class="b">Unread</span></div>
+          <p class="m">${dt(n.t)}</p>
+          ${btn('Mark as read', `X('markNoteRead','${n.id}')`, 'g')}
+        </div>`), 'No unread notifications.')}
+      <h3>History</h3>
+      ${list(mine.filter(n => n.read).map(n => `
+        <div class="card"><p>${esc(n.m)}</p><p class="m">${dt(n.t)} · Read</p></div>`), 'No read notifications yet.')}`;
+  }
+
+  function supportPage() {
+    const mine = S.tickets.filter(t => t.uid === me.id);
+    return `
+      <h2>Support</h2>
+      <p class="page-subtitle">Create a local service ticket if you need help with a request.</p>
+      <div class="card">
+        <label>Subject<input id="tkSub"></label>
+        <label>Category<select id="tkCat"><option>Request issue</option><option>Payment issue</option><option>Account issue</option><option>Other</option></select></label>
+        <label>Describe the issue<textarea id="tkBody" rows="4"></textarea></label>
+        ${btn('Submit ticket', "X('ticketCreate')")}
+      </div>
+      ${list(mine.map(t => `
+        <div class="card">
+          <b>${esc(t.subject)}</b><span class="b">${esc(t.status)}</span>
+          <p class="m">${dt(t.t)} · ${esc(t.category)}</p>
+          <p>${esc(t.body)}</p>
+          ${t.reply ? `<p class="m">Admin reply: ${esc(t.reply)}</p>` : ''}
+        </div>`), 'You have no support tickets.')}`;
+  }
+
+  function profilePage() {
+    return `
+      <h2>Profile &amp; Settings</h2>
+      <p class="page-subtitle">Manage your account details and security.</p>
+      <div class="card profile-card">
+        <div class="section-heading">
+          <div class="ic2">${ico('phone', 18)}</div>
+          <div><b>Personal information</b><p class="m">Keep your contact details up to date.</p></div>
+        </div>
+        <label>Full name<input id="n" value="${esc(me.name)}" autocomplete="name"></label>
+        <label>Email address<input id="em" type="email" value="${esc(me.email || '')}" autocomplete="email"></label>
+        <label>Mobile number<input id="m" type="tel" value="${esc(me.mobile)}" autocomplete="tel"></label>
+        <div class="m">Account role: ${esc(me.role)} · Status: ${esc(me.st)}</div>
+        <div class="row">${btn('Save changes', "X('profile')")}</div>
+      </div>
+      <div class="card profile-card">
+        <div class="section-heading">
+          <div class="ic2">${ico('shield', 18)}</div>
+          <div><b>Password &amp; security</b><p class="m">Enter your current password before choosing a new one.</p></div>
+        </div>
+        ${passwordField('Current password', 'o', 'current-password')}
+        ${passwordField('New password', 'n1', 'new-password')}
+        ${passwordField('Confirm new password', 'n2', 'new-password')}
+        ${btn('Change password', "X('pw')")}
+      </div>`;
+  }
+
+  /* ---- Agent pages ---- */
+
+  const AGENT_PAGES = {
+
+    Dashboard() {
+      const mine = S.reqs.filter(r => r.ag === me.id);
+      const txs = S.txs.filter(t => t.aid === me.id);
+      const earned = f => inr(txs.filter(f).reduce((n, t) => n + t.amt, 0));
+      const eligible = S.reqs.filter(r => canAccept(me, r));
+      const paid = mine.filter(r => r.paid).length;
+      const declined = S.reqs.filter(r => r.to === me.id && r.st === 'Rejected').length;
+
+      return `
+        <h2>Dashboard</h2>
+        <div class="grid">${
+          stat('Eligible requests', eligible.filter(r => !r.to).length) +
+          stat('Direct requests', eligible.filter(r => r.to).length) +
+          stat('Accepted', mine.filter(r => r.st === 'Accepted').length) +
+          stat('In progress', mine.filter(r => r.st === 'In Progress').length) +
+          stat('Completed / paid', mine.filter(r => r.st === 'Paid' || r.st === 'Completed').length) +
+          stat('Today', earned(t => day(t.t) === day(Date.now()))) +
+          stat('This month', earned(t => sameMonth(t.t))) +
+          stat('Total earned', earned(() => true)) +
+          stat('Wallet', inr(me.bal)) +
+          stat('Paid / declined', paid + ' / ' + declined)
+        }</div>`;
+    },
+
+    Available() {
+      const open = S.reqs.filter(r => canAccept(me, r));
+      return `
+        <h2>Available requests</h2>
+        <p class="m">Only requests for your unlocked services, plus requests sent directly to you.</p>
+        ${list(open.map(r => requestCard(r,
+          btn('Accept', `X('accept','${r.id}')`) + (r.to ? btn('Reject', `X('decline','${r.id}')`, 'd') : ''))),
+          'Nothing available right now.')}`;
+    },
+
+    'Active Work'() {
+      const actions = r => r.st === 'Accepted' ? btn('Mark In Progress', `X('adv','${r.id}')`)
+        : r.st === 'In Progress' ? btn('Mark Completed', `X('adv','${r.id}')`)
+        : '';
+      return `<h2>My work</h2>${list(S.reqs.filter(r => r.ag === me.id).map(r => requestCard(r, actions(r))), 'No assigned work yet.')}`;
+    },
+
+    'My Services'() {
+      const rows = activeServices().map(s => {
+        const unlocked = me.perms.includes(s.id);
+        const pending = S.unl.find(u => u.aid === me.id && u.svc === s.id && u.st === 'Pending');
+        const rejected = S.unl.find(u => u.aid === me.id && u.svc === s.id && u.st === 'Rejected');
+        const status = unlocked ? '<span class="b">Unlocked</span>'
+          : pending ? '<span class="b">Request pending</span>'
+          : btn(rejected ? 'Rejected · ask again' : 'Locked · request unlock', `X('unlock','${s.id}')`, 'g');
+        return `<div class="card row" style="justify-content:space-between;align-items:center"><span>${esc(sn(s.id))}</span>${status}</div>`;
+      });
+      return `<h2>My services</h2>${rows.join('')}`;
+    },
+
+    Transactions() {
+      const mine = S.txs.filter(t => t.aid === me.id);
+      const rows = mine.filter(matchesTxFilter).map(t => `
+        <div class="card">
+          <b>${esc(t.id)}</b> <span class="b">${esc(t.st)}</span>
+          <div class="m">${dt(t.t)} · ${esc(t.rid)} · ${esc(sn(t.svc))} · ${esc(payerName(t))}</div>
+          <b>${inr(t.amt)}</b>
+        </div>`);
+      return `
+        <h2>Transactions</h2>
+        <div class="grid">${stat('Money in', inr(mine.reduce((n, t) => n + t.amt, 0))) + stat('Completed', mine.filter(t => t.st === 'Success').length)}</div>
+        ${txFilterBar()}
+        ${list(rows, 'No transactions match these filters.')}`;
+    },
+
+    Wallet() {
+      const entries = [
+        ...S.adjustments.filter(a => a.uid === me.id).map(a => ({
+          id: a.id, t: a.t, amt: a.amt, label: a.label || a.reason || 'Wallet adjustment', note: a.privateNote ? '' : a.reason
+        })),
+        ...S.txs.filter(t => t.aid === me.id && t.kind === 'agent_fund_request').map(t => ({
+          id: t.id, t: t.t, amt: t.amt, label: 'Funds added to your wallet', note: 'Approved fund request · ' + (t.rid || '')
+        }))
+      ].sort((a, b) => b.t - a.t);
+
+      return walletSummary() + `
+        <h3>Wallet transaction history</h3>
+        ${list(entries.map(a => `
+          <div class="card">
+            <div class="row"><b>${esc(a.label)}</b><strong class="success-text">+${inr(a.amt)}</strong></div>
+            <p class="m">${dt(a.t)} · ${esc(a.id)}</p>
+            ${a.note ? `<p>${esc(a.note)}</p>` : ''}
+          </div>`), 'No wallet history yet.')}`;
+    },
+
+    Funds() {
+      const mine = S.fundRequests.filter(f => f.aid === me.id).sort((a, b) => b.created - a.created);
+      return `
+        <h2>Funds</h2>
+        <p class="page-subtitle">Request a wallet credit from the administrator and track its status here.</p>
+        <div class="card">
+          <h3>Request funds</h3>
+          <label>Amount (₹)<input id="fundAmount" type="number" min="1" step="1" placeholder="Enter amount"></label>
+          <label>Reason (optional)<textarea id="fundReason" rows="2" placeholder="Add a reason if needed"></textarea></label>
+          ${btn('Send fund request', "X('agentFundRequest')")}
+        </div>
+        <h3>My fund request history</h3>
+        ${list(mine.map(f => `
+          <div class="card">
+            <div class="row"><b>${inr(f.amount)}</b>${fundBadge(f.status)}</div>
+            <p class="m">${esc(f.id)} · ${dt(f.created)}</p>
+            ${f.reason ? `<p>${esc(f.reason)}</p>` : ''}
+            ${f.decided ? `<p class="m">Reviewed ${dt(f.decided)}</p>` : ''}
+            ${f.rejectReason ? `<p class="warn">${esc(f.rejectReason)}</p>` : ''}
+            ${f.status === 'Approved' ? `<p class="success-text">${inr(f.amount)} has been added to your wallet. Transaction: ${esc(f.txid || '')}</p>` : ''}
+          </div>`), 'No fund requests yet.')}`;
+    },
+
+    Notifications: notificationsPage,
+    Support: supportPage,
+    Profile: profilePage
+  };
+
+  /* ---- Admin pages ---- */
+
+  const ADMIN_PAGES = {
+
+    Overview() {
+      const done = S.txs.filter(t => t.st === 'Success');
+      const volume = f => inr(done.filter(f).reduce((n, t) => n + t.amt, 0));
+      const team = agents();
+      return `
+        <h2>Overview</h2>
+        <div class="grid">${
+          stat('Agents', team.length) +
+          stat('Active agents', team.filter(u => u.st === 'active').length) +
+          stat('Locked/restricted agents', team.filter(u => u.st !== 'active').length) +
+          stat('Pending unlocks', S.unl.filter(a => a.st === 'Pending').length) +
+          stat('Requests', S.reqs.length) +
+          stat('Successful transactions', done.length) +
+          stat('Volume today', volume(t => day(t.t) === day(Date.now()))) +
+          stat('Volume this month', volume(t => sameMonth(t.t)))
+        }</div>
+        <p class="m">No platform fee is configured, so figures are gross volume, not revenue.</p>
+        <div class="card">${REQUEST_STATUSES.map(s => `<span class="b">${s}: ${S.reqs.filter(r => r.st === s).length}</span> `).join('')}</div>`;
+    },
+
+    'eKYC Approval'() {
+      const pending = S.kycs.filter(k => k.status === 'Pending');
+      const reviewed = S.kycs.filter(k => k.status !== 'Pending').sort((a, b) => (b.reviewed || 0) - (a.reviewed || 0));
+      return `
+        <h2>eKYC approval</h2>
+        <p class="page-subtitle">Review fictional test records. Never use real Aadhaar or bank details in this college demo.</p>
+        <h3>Needs review (${pending.length})</h3>
+        ${list(pending.map(k => `
+          <div class="card">
+            <div class="row"><b>${esc(k.name)}</b><span class="b">Agent</span><span class="b">Pending</span></div>
+            <p class="m">${esc(k.email)} · ${esc(k.mobile)} · Submitted ${dt(k.submitted)}</p>
+            <p>
+              <b>Phone:</b> ${esc(k.phone || k.mobile || 'Not provided')}<br>
+              <b>Address:</b> ${esc(k.address)}<br>
+              <b>Aadhaar:</b> ${esc(k.docno)}<br>
+              <b>Bank:</b> ${esc(k.bank || k.bankName || 'Not provided')} · <b>IFSC:</b> ${esc(k.ifsc || 'Not provided')}<br>
+              <b>Account number:</b> ${esc(k.accountNumber || k.accountRef || 'Not provided')}
+            </p>
+            <div class="row">${btn('Approve', `X('kycDecision','${k.id}',true)`)}${btn('Reject / request corrections', `X('kycDecision','${k.id}',false)`, 'd')}</div>
+          </div>`), 'No eKYC requests awaiting review.')}
+        <h3>Reviewed history (${reviewed.length})</h3>
+        ${list(reviewed.map(k => `
+          <div class="card">
+            <div class="row"><b>${esc(k.name)}</b><span class="b">Agent</span><span class="b">${esc(k.status)}</span></div>
+            <p class="m">${esc(k.email)} · ${dt(k.reviewed || k.submitted)}</p>
+            ${k.reason ? `<p>Reason: ${esc(k.reason)}</p>` : ''}
+            ${k.status === 'Rejected' ? `<div class="row">${btn('Approve now', `X('kycDecision','${k.id}',true)`)}</div>` : ''}
+          </div>`), 'No reviewed eKYC records yet.')}`;
+    },
+
+    Permissions() {
+      const services = activeServices();
+      const agentCard = a => {
+        const serviceChips = services.map(x => {
+          const on = a.perms.includes(x.id);
+          return `<button class="chip ${on ? 'on' : ''}" title="${on ? 'Unlocked' : 'Locked'}" onclick="X('perm','${a.id}','${x.id}')">${on ? '✓ ' : '🔒 '}${esc(x.en)}</button>`;
+        }).join('');
+        const sectionChips = AGENT_FEATURES.map(f => {
+          const locked = a.features[f] === false;
+          return `<button class="chip ${locked ? '' : 'on'}" title="${locked ? 'Locked' : 'Unlocked'}" onclick="X('featurePerm','${a.id}','${f}')">${locked ? '🔒 ' : '✓ '}${esc(f)}</button>`;
+        }).join('');
+        return `
+          <div class="card">
+            <h3>${esc(a.name)} <span class="b">${esc(a.st)}</span></h3>
+            <p class="m">Service permissions</p>
+            <div class="row">${serviceChips}</div>
+            <p class="m">Dashboard sections</p>
+            <div class="row">${sectionChips}</div>
+          </div>`;
+      };
+      return `
+        <h2>Agent permissions</h2>
+        <p class="page-subtitle">Service access and dashboard sections are managed separately.</p>
+        ${agents().map(agentCard).join('')}`;
+    },
+
+    'Unlock Requests'() {
+      return `<h2>Unlock requests</h2>${list(S.unl.map(l => `
+        <div class="card">
+          <b>${esc(U(l.aid).name)}</b> → ${esc(sn(l.svc))} <span class="b">${l.st}</span>
+          <div>${esc(l.why)}</div>
+          ${l.note ? `<div class="m">Note: ${esc(l.note)}</div>` : ''}
+          ${l.st === 'Pending' ? `<div class="row">${btn('Approve', `X('decide','${l.id}',true)`) + btn('Reject', `X('decide','${l.id}',false)`, 'd')}</div>` : ''}
+        </div>`), 'None.')}`;
+    },
+
+    Agents() {
+      const accounts = S.users.filter(u => u.role !== 'admin');
+      return `
+        <h2>Agents and accounts</h2>
+        <p class="page-subtitle">Create and manage agent access.</p>
+        <div class="card">
+          <h3>Create Agent Account</h3>
+          <label>Name<input id="caName" autocomplete="off" placeholder="Agent name"></label>
+          <label>Email ID<input id="caEmail" type="email" autocomplete="off" placeholder="name@example.com"></label>
+          ${passwordField('Password', 'caPassword', 'new-password')}
+          ${btn('Create Agent Account', "X('adminCreateAccount')")}
+        </div>
+        ${accounts.map(u => `
+          <div class="card">
+            <div class="row"><b>${esc(u.name)}</b><span class="b">${esc(u.role)}</span><span class="b">${esc(u.st)}</span><span class="b">eKYC: ${esc(u.kycStatus || 'Not submitted')}</span></div>
+            <div class="m">${esc(u.email)} · Wallet ${inr(u.bal)}</div>
+            <div class="row">
+              ${btn('Edit name/email', `X('adminEditAccount','${u.id}')`, 'g')}
+              ${btn('Change email', `X('adminSetEmail','${u.id}')`, 'g')}
+              ${btn('Reset password', `X('resetPw','${u.id}')`, 'g')}
+              ${u.st === 'locked' ? btn('Unlock', `X('setSt','${u.id}','active')`) : btn('Lock', `X('setSt','${u.id}','locked')`, 'd')}
+              ${u.st === 'restricted' ? btn('Restore', `X('setSt','${u.id}','active')`, 'g') : btn('Restrict', `X('setSt','${u.id}','restricted')`, 'g')}
+              ${btn('Delete', `X('adminDeleteAccount','${u.id}')`, 'd')}
+            </div>
+          </div>`).join('')}`;
+    },
+
+    Requests() {
+      const actions = r => {
+        if (!r.ag || !['Accepted', 'In Progress'].includes(r.st)) return '';
+        const lostPermission = U(r.ag).perms.includes(r.svc) ? '' : '<span class="m">Agent lost permission.</span>';
+        return lostPermission + btn('Return to open pool', `X('reassign','${r.id}')`, 'g');
+      };
+      return `<h2>All requests</h2>${list(S.reqs.map(r => requestCard(r, actions(r))), 'No requests yet.')}`;
+    },
+
+    'Fund Requests'() {
+      const requests = S.fundRequests.filter(f => f.kind === 'agent_wallet').sort((a, b) => (b.created || 0) - (a.created || 0));
+      const count = status => requests.filter(f => f.status === status).length;
+      return `
+        <h2>Fund Requests</h2>
+        <p class="page-subtitle">Review agent requests. Approving a request credits the agent wallet once and creates a wallet transaction.</p>
+        <div class="grid">${stat('Pending', count('Pending')) + stat('Accepted', count('Approved')) + stat('Rejected', count('Rejected'))}</div>
+        ${list(requests.map(f => {
+          const agent = S.users.find(u => u.id === f.aid) || { name: 'Deleted agent', email: '' };
+          return `
+            <div class="card">
+              <div class="row"><b>${esc(agent.name)} · ${inr(f.amount)}</b>${fundBadge(f.status)}</div>
+              <p class="m">${esc(agent.email || '')} · ${esc(f.id)} · ${dt(f.created)}</p>
+              ${f.reason ? `<p>${esc(f.reason)}</p>` : '<p class="m">No reason provided.</p>'}
+              ${f.status === 'Pending' ? `<div class="row">${btn('Approve', `X('adminFundDecision','${f.id}','approve')`)}${btn('Reject', `X('adminFundDecision','${f.id}','reject')`, 'd')}</div>` : ''}
+              ${f.status === 'Approved' ? `<p class="success-text">${inr(f.amount)} credited · ${esc(f.txid || '')}</p>` : ''}
+              ${f.status === 'Rejected' && f.rejectReason ? `<p class="warn">${esc(f.rejectReason)}</p>` : ''}
+            </div>`;
+        }), 'No fund requests have been submitted.')}`;
+    },
+
+    Transactions() {
+      const done = S.txs.filter(t => t.st === 'Success');
+      return `
+        <h2>All transactions</h2>
+        <p class="page-subtitle">Search and filter successful payments.</p>
+        <div class="grid">${stat('Transaction count', done.length) + stat('Gross volume', inr(done.reduce((n, t) => n + t.amt, 0)))}</div>
+        ${txFilterBar()}
+        ${list(S.txs.filter(matchesTxFilter).map(t => `
+          <div class="card transaction-row">
+            <div>
+              <b>${esc(t.id)}</b><span class="b">${esc(t.st)}</span>
+              <p class="m">${dt(t.t)} · ${esc(t.rid)} · ${esc(sn(t.svc))}</p>
+              <p class="m">Paid by: ${esc(payerName(t))} · Agent: ${esc(U(t.aid).name)}</p>
+            </div>
+            <strong>${inr(t.amt)}</strong>
+          </div>`), 'No transactions match these filters.')}`;
+    },
+
+    'Wallet Adjustments'() {
+      return `
+        <h2>Agent wallet transactions</h2>
+        <p class="page-subtitle">Record money already received or a wallet credit. This does not grant service or feature access. Admin notes are private to this local admin panel.</p>
+        <div class="card">
+          <h3>Add agent wallet credit</h3>
+          <label>Agent<select id="creditAgent">${agents().map(u => `<option value="${u.id}">${esc(u.name)} · ${esc(u.email)} · ${inr(u.bal)}</option>`).join('')}</select></label>
+          <label>Amount received (₹)<input id="creditAmount" type="number" min="1" step="1"></label>
+          <label>Private admin note<textarea id="creditNote" rows="2" placeholder="Internal note"></textarea></label>
+          ${btn('Record credit', "X('adminAgentCredit')")}
+        </div>
+        <h3>History</h3>
+        ${list(S.adjustments.map(a => `
+          <div class="card">
+            <div class="row"><b>${esc(U(a.uid).name)} · ${inr(a.amt)}</b><span class="b">${esc(a.label || a.reason || 'Adjustment')}</span></div>
+            <p class="m">${dt(a.t)} · ${esc(a.id || '')} · by ${esc(a.by || 'Admin')}</p>
+            ${a.privateNote ? `<p class="m">Private note: ${esc(a.note)}</p>` : `<p>${esc(a.reason || '')}</p>`}
+          </div>`), 'No wallet records yet.')}`;
+    },
+
+    Tickets() {
+      return `
+        <h2>Support tickets</h2>
+        <p class="page-subtitle">Review and update service support requests.</p>
+        ${list(S.tickets.map(t => `
+          <div class="card">
+            <div class="row"><b>${esc(t.subject)}</b><span class="b">${esc(t.status)}</span></div>
+            <p class="m">${esc(U(t.uid).name)} · ${esc(t.category)} · ${dt(t.t)}</p>
+            <p>${esc(t.body)}</p>
+            ${t.reply ? `<p class="m">Reply: ${esc(t.reply)}</p>` : ''}
+            <div class="row">${btn('Mark in progress', `X('ticketStatus','${t.id}','In Progress')`, 'g')}${btn('Resolve', `X('ticketStatus','${t.id}','Resolved')`)}</div>
+          </div>`), 'No tickets have been submitted.')}`;
+    },
+
+    Services() {
+      const editing = editingServiceId && sv(editingServiceId) || {};
+      const q = adminServiceQuery.toLowerCase();
+      const rows = S.svcs.filter(x => !q || (x.en + x.hi).toLowerCase().includes(q)).sort((a, b) => a.ord - b.ord);
+
+      const optionList = (values, selected) => values.map(v => `<option ${selected === v ? 'selected' : ''}>${v}</option>`).join('');
+
+      const row = x => `
+        <div class="card">
+          <div class="row" style="align-items:center;margin:0">
+            <span class="ic2">${ico(x.icon, 18)}</span><b>${esc(x.en)}</b>
+            <span class="b">${x.arch ? 'Archived' : x.pub ? 'Published' : 'Hidden'}</span>${x.feat ? '<span class="b">Featured</span>' : ''}
+          </div>
+          <div class="m">${x.id} · ${T('c.' + x.cat)} · #${x.ord} · ${S.users.filter(u => u.perms.includes(x.id)).length} agents</div>
+          <div class="row">
+            ${btn('Edit', `editingServiceId='${x.id}';R()`, 'g')}
+            ${x.arch
+              ? btn('Restore', `X('svcOp','${x.id}','restore')`, 'g')
+              : btn(x.pub ? 'Hide' : 'Publish', `X('svcOp','${x.id}','pub')`, 'g') +
+                btn(x.feat ? 'Unfeature' : 'Feature', `X('svcOp','${x.id}','feat')`, 'g') +
+                btn('↑', `X('svcOp','${x.id}','up')`, 'g') +
+                btn('↓', `X('svcOp','${x.id}','dn')`, 'g')}
+            ${btn('Remove', `X('svcOp','${x.id}','del')`, 'd')}
+          </div>
+        </div>`;
+
+      return `
+        <h2>${T('t.Services')}</h2>
+        <div class="card">
+          <b>${editingServiceId ? 'Edit' : 'Add'} service</b>
+          <div class="fg">
+            <label>Name (EN)<input id="sn1" value="${esc(editing.en)}"></label>
+            <label>नाम (हिन्दी)<input id="sn2" value="${esc(editing.hi)}"></label>
+            <label>Description (EN)<input id="sd1" value="${esc(editing.de)}"></label>
+            <label>विवरण (हिन्दी)<input id="sd2" value="${esc(editing.dh)}"></label>
+            <label>Category<select id="sc">${optionList(Object.keys(CATS), editing.cat)}</select></label>
+            <label>Icon<select id="si">${optionList(Object.keys(ICON), editing.icon)}</select></label>
+            <label>Order<input id="so" type="number" value="${editing.ord ?? S.svcs.length + 1}"></label>
+          </div>
+          <label class="c"><input type="checkbox" id="sf" ${editing.feat ? 'checked' : ''}> Featured</label>
+          <label class="c"><input type="checkbox" id="sp" ${(editing.pub ?? 1) ? 'checked' : ''}> Published</label>
+          <div class="row">${btn('Save', "X('saveSvc')")}${editingServiceId ? btn('Cancel', 'editingServiceId=null;R()', 'g') : ''}</div>
+        </div>
+        <input class="sr" placeholder="Search" value="${esc(adminServiceQuery)}" onchange="adminServiceQuery=this.value;R()">
+        ${rows.map(row).join('')}`;
+    },
+
+    Plans() {
+      return `
+        <h2>Service plans and pricing</h2>
+        <p class="page-subtitle">Manage the public plan cards. Choosing a plan does not unlock services or dashboard sections; the administrator must grant access separately.</p>
+        <div class="card">
+          ${S.plans.map(p => `
+            <div class="card">
+              <h3>${esc(p.name)}</h3>
+              <label>Plan name<input id="planname_${p.id}" value="${esc(p.name)}"></label>
+              <label>Price (₹)<input id="plan_${p.id}" type="number" min="0" step="1" value="${Number(p.price) || 0}"></label>
+              <label>Description<input id="plandesc_${p.id}" value="${esc(p.desc || '')}"></label>
+              <p class="m">${(p.features || []).map(esc).join(' · ')}</p>
+            </div>`).join('')}
+          ${btn('Save plan pricing', "X('savePlans')")}
+        </div>`;
+    },
+
+    'Cards CMS'() {
+      const cards = S.ann || ANN;
+      const editing = editingCardIndex !== null ? cards[Number(editingCardIndex)] || {} : {};
+      const isEditing = editingCardIndex !== null;
+      return `
+        <h2>Homepage Cards CMS</h2>
+        <p class="page-subtitle">Manage only the public cards shown in the homepage News section. This is not a full website CMS; headings, footer, buttons, and layout are not editable here.</p>
+        <div class="card">
+          <b>${isEditing ? 'Edit card' : 'Add a card'}</b>
+          <label>Card title<input id="at" value="${esc(editing.t || '')}"></label>
+          <label>Card description<textarea id="ab" rows="3">${esc(editing.b || '')}</textarea></label>
+          <label>Card label<input id="ad" value="${esc(typeof editing.d === 'string' ? editing.d : 'Announcement')}" placeholder="e.g. Citizen services"></label>
+          <label>Image URL (optional)<input id="ai" value="${esc(editing.img || '')}" placeholder="https://..."></label>
+          <div class="row">${btn(isEditing ? 'Save changes' : 'Add card', "X('saveAnn')")}${isEditing ? btn('Cancel', 'editingCardIndex=null;R()', 'g') : ''}</div>
+        </div>
+        <h3>Homepage cards (${cards.length})</h3>
+        ${cards.map((a, i) => `
+          <div class="card">
+            <div class="row"><b>${esc(a.t)}</b><span class="b">${a.h ? 'Hidden' : 'Published'}</span></div>
+            <p class="m">${esc(typeof a.d === 'string' ? a.d : 'Announcement')}</p>
+            <p>${esc(a.b)}</p>
+            <div class="row">${btn('Edit', `X('editAnn',${i})`, 'g')}${btn(a.h ? 'Publish' : 'Hide', `X('annOp',${i},'h')`, 'g')}${btn('Delete', `X('annOp',${i},'d')`, 'd')}</div>
+          </div>`).join('')}`;
+    },
+
+    Audit() {
+      return `<h2>Audit log</h2>${list(S.audit.map(a => `
+        <div class="card">
+          <b>${esc(a.act)}</b>
+          <div class="m">${dt(a.t)} · by ${esc(a.by)} · ${esc(a.target)}${a.why ? ' · ' + esc(a.why) : ''}</div>
+        </div>`), 'No admin actions yet.')}`;
+    },
+
+    'Account Settings': profilePage
+  };
+
+  const PAGES = { agent: AGENT_PAGES, admin: ADMIN_PAGES };
+
+
+  /* ---------------------------------------------------------------------
+     9. Dashboard shell, render loop & start-up
+     --------------------------------------------------------------------- */
+
+  /** Open or close the dashboard sidebar drawer. */
+  function drawer(open) {
+    menu = open;
+    const sidebar = $('.sb'), overlay = $('.ov'), burger = $('.burger2');
+    sidebar?.classList.toggle('open', !!open);
+    overlay?.classList.toggle('show', !!open);
+    burger?.setAttribute('aria-expanded', String(!!open));
+    if (burger) burger.style.zIndex = open ? '45' : '';
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+
+  function shell() {
+    const isLocked = section => me.role === 'agent' && me.features[section] === false;
+
+    const nav = NAV[me.role].map(t => {
+      const locked = isLocked(t);
+      const onclick = locked ? `toast('${LOCKED_MSG}');return` : `tab='${t}';drawer(0);R()`;
+      return `<button class="ni ${t === tab ? 'on' : ''}" aria-current="${t === tab}" title="${locked ? LOCKED_MSG : ''}" onclick="${onclick}">${locked ? '🔒 ' : ''}${T('t.' + t)}</button>`;
+    }).join('');
+
+    const content = isLocked(tab)
+      ? `<div class="card"><h2>Feature locked 🔒</h2><p>${LOCKED_MSG}</p></div>`
+      : (PAGES[me.role][tab] || (() => ''))();
+
+    return `
+      <div class="app">
+        <aside class="sb" aria-label="Menu">
+          <div class="sbh"><b>CSCDigitalMitra</b><button class="g x" aria-label="Close menu" onclick="drawer(0)">✕</button></div>
+          ${nav}
+        </aside>
+        <div class="ov" onclick="drawer(0)"></div>
+        <div class="mn">
+          <header>
+            <button class="g burger2" aria-label="Open menu" aria-expanded="false" onclick="drawer(!menu)">☰</button>
+            <span class="m">${me.role} · ${esc(me.name)}${me.role === 'admin' ? '' : ' · ' + inr(me.bal)}</span>
+            <span class="row" style="margin:0">${languageSwitch()}${themeToggle()}${btn(T('logout'), "X('out')", 'g')}</span>
+          </header>
+          <main class="pg">
+            ${me.st === 'restricted' ? '<div class="warn">Account restricted: new actions are blocked.</div>' : ''}
+            ${content}
+          </main>
+        </div>
+      </div>`;
+  }
+
+  /** Render the current screen. */
+  function R() {
+    menu = 0;
+    document.body.style.overflow = '';
+    $('#app').innerHTML = me ? shell() : (page === 'auth' ? publicHeader() + authForm() : home());
+  }
+
+  /** An account may resume a saved session only if it could still sign in. */
+  const canResume = u => u.st !== 'locked' && (u.role === 'admin' || u.kycStatus === 'Approved');
+
+  addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      drawer(0);
+      closePublicMenu();
+    }
+  });
+
+  addEventListener('resize', () => {
+    if (innerWidth > 760) closePublicMenu();
+  });
+
+  addEventListener('scroll', () => {
+    document.getElementById('backTop')?.classList.toggle('visible', window.scrollY > 420);
+  }, { passive: true });
+
+  document.documentElement.dataset.theme = theme;
+  document.documentElement.lang = lang;
+
+  async function initApp() {
+    const token = readStorage(AUTH_TOKEN_KEY);
+    const sessionId = readStorage(SESSION_KEY);
+    try {
+      if (token && sessionId) {
+        const response = await fetch('/api/state', { headers: { 'Authorization': 'Bearer ' + token } });
+        if (response.ok) {
+          const result = await response.json();
+          S = result.state;
+          me = S.users.find(u => String(u.id) === String(sessionId) && canResume(u)) || null;
+          if (me) tab = NAV[me.role][0];
+          else if (!sessionId) { try { localStorage.removeItem(AUTH_TOKEN_KEY); } catch (_) {} }
+        } else {
+          try { localStorage.removeItem(AUTH_TOKEN_KEY); localStorage.removeItem(SESSION_KEY); } catch (_) {}
+        }
+      } else if (token && !sessionId) {
+        // eKYC-only sessions are intentionally not resumed after a browser refresh.
+        try { localStorage.removeItem(AUTH_TOKEN_KEY); } catch (_) {}
+      }
+      if (!S || !Array.isArray(S.svcs) || !Array.isArray(S.plans)) {
+        const response = await fetch('/api/public-state');
+        const result = await response.json();
+        if (result.initialized && result.state) {
+          S = result.state;
+        } else {
+          // First run only: seed the shared database from the existing application's demo data.
+          const initial = load();
+          const initialAdmin = initial.users.find(u => u.role === 'admin' && String(u.email || '').toLowerCase() === 'admin@cscmitra.in');
+          if (initialAdmin) initialAdmin.pw = 'admin123';
+          const boot = await fetch('/api/bootstrap', {
+            method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ state: initial })
+          });
+          const latest = await fetch('/api/public-state').then(r => r.json());
+          if (latest.initialized && latest.state) S = latest.state;
+          else throw new Error((await boot.json().catch(() => ({}))).error || 'Could not initialize the Supabase database. Check server logs.');
+        }
+      }
+      if (!S.svcs) ensureServices(S);
+      if (!S.plans) S.plans = DEFAULT_PLANS.map(p => ({ ...p, features: [...p.features] }));
+      if (!S.ann) S.ann = ANN.map(a => ({ ...a }));
+      if (!Array.isArray(S.users)) S.users = [];
+      if (!Array.isArray(S.reqs)) S.reqs = [];
+      if (!me) page = 'home';
+      R();
+    } catch (error) {
+      console.error(error);
+      $('#app').innerHTML = `<main class="auth"><section class="card"><h2>Could not connect to CSC Digital Mitra</h2><p>Check your .env Supabase connection settings and restart the server with <code>npm run dev</code>.</p><p class="m">${esc(error.message || 'Database connection failed.')}</p></section></main>`;
+    }
+  }
+
+  initApp();
+
+  </script>
+</body>
+</html>
